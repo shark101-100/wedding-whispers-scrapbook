@@ -7,6 +7,7 @@ import rose from "@/assets/rose.png";
 import heart from "@/assets/heart.png";
 import { RsvpForm } from "@/components/RsvpForm";
 import { Toaster } from "@/components/ui/sonner";
+import { Reveal } from "@/components/Reveal";
 
 export const Route = createFileRoute("/")({
   component: Invitation,
@@ -54,7 +55,10 @@ function Invitation() {
 
         {/* Header sketch */}
         <header className="relative text-center">
-          <p className="font-hand text-2xl text-forest tracking-wide">
+          <p
+            className="font-hand text-2xl text-forest tracking-wide animate-paper-in"
+            style={{ animationDelay: "0ms" }}
+          >
             — с радостью приглашаем —
           </p>
 
@@ -64,17 +68,27 @@ function Invitation() {
               alt=""
               width={768}
               height={1024}
-              className="mx-auto w-44 opacity-80 deco-rotate-left"
+              className="mx-auto w-44 opacity-80 deco-rotate-left animate-sketch-in"
+              style={{ animationDelay: "150ms" }}
             />
-            <h1 className="font-script text-[2.6rem] leading-[1.1] text-burgundy mt-2">
+            <h1
+              className="font-script text-[2.6rem] leading-[1.1] text-burgundy mt-2 animate-paper-in"
+              style={{ animationDelay: "300ms" }}
+            >
               Анна
               <span className="block font-hand text-3xl text-forest -my-1">&</span>
               Михаил
             </h1>
-            <div className="mx-auto mt-3 h-3 w-40 ink-line" />
+            <div
+              className="mx-auto mt-3 h-3 w-40 ink-line animate-ink-draw"
+              style={{ animationDelay: "650ms" }}
+            />
           </div>
 
-          <p className="mt-6 font-hand text-xl text-ink/80 leading-snug">
+          <p
+            className="mt-6 font-hand text-xl text-ink/80 leading-snug animate-paper-in"
+            style={{ animationDelay: "450ms" }}
+          >
             наконец-то решились<br />
             и зовём вас праздновать<br />
             самый важный день
@@ -82,7 +96,7 @@ function Invitation() {
         </header>
 
         {/* Date card */}
-        <section className="relative mt-14">
+        <Reveal as="section" className="relative mt-14" variant="paper">
           <PolaroidNote rotate="-1.5deg">
             <p className="font-hand text-center text-lg text-forest">сохраните дату</p>
             <div className="mt-3 flex items-center justify-center gap-4">
@@ -108,19 +122,19 @@ function Invitation() {
             width={512}
             height={512}
             loading="lazy"
-            className="absolute -bottom-6 -right-2 w-16 rotate-12 opacity-70"
+            className="absolute -bottom-6 -right-2 w-16 rotate-12 opacity-70 animate-float"
           />
-        </section>
+        </Reveal>
 
         {/* Story */}
-        <section className="relative mt-20 text-center">
+        <Reveal as="section" className="relative mt-20 text-center" variant="paper">
           <img
             src={rose}
             alt=""
             width={512}
             height={640}
             loading="lazy"
-            className="mx-auto w-24 opacity-80 deco-rotate-right"
+            className="mx-auto w-24 opacity-80 deco-rotate-right animate-float-slow"
           />
           <h2 className="mt-3 font-script text-3xl text-burgundy">наша история</h2>
           <p className="mx-auto mt-4 max-w-sm font-serif-display text-[1.05rem] leading-relaxed text-ink/85">
@@ -130,12 +144,14 @@ function Invitation() {
           <p className="mt-4 font-hand text-xl text-forest">
             …и хотим, чтобы вы были рядом ♡
           </p>
-        </section>
+        </Reveal>
 
         {/* Schedule */}
         <section className="relative mt-20">
-          <h2 className="text-center font-script text-3xl text-burgundy">программа дня</h2>
-          <div className="mx-auto mt-2 h-3 w-32 ink-line" />
+          <Reveal variant="paper">
+            <h2 className="text-center font-script text-3xl text-burgundy">программа дня</h2>
+            <div className="mx-auto mt-2 h-3 w-32 ink-line" />
+          </Reveal>
 
           <ul className="mt-8 space-y-7">
             {[
@@ -144,8 +160,11 @@ function Invitation() {
               { time: "19:00", title: "ужин", note: "длинный стол при свечах" },
               { time: "21:00", title: "танцы до утра", note: "обещаем медляки" },
             ].map((item, i) => (
-              <li
+              <Reveal
                 key={item.time}
+                as="li"
+                variant="paper"
+                delay={i * 120}
                 className="relative flex items-start gap-5"
                 style={{ transform: `rotate(${i % 2 === 0 ? "-0.6deg" : "0.7deg"})` }}
               >
@@ -162,22 +181,24 @@ function Invitation() {
                     {item.note}
                   </p>
                 </div>
-              </li>
+              </Reveal>
             ))}
           </ul>
 
-          <img
-            src={glasses}
-            alt=""
-            width={512}
-            height={512}
-            loading="lazy"
-            className="mx-auto mt-10 w-28 opacity-85"
-          />
+          <Reveal variant="sketch" delay={200}>
+            <img
+              src={glasses}
+              alt=""
+              width={512}
+              height={512}
+              loading="lazy"
+              className="mx-auto mt-10 w-28 opacity-85 animate-float-slow"
+            />
+          </Reveal>
         </section>
 
         {/* Place */}
-        <section className="relative mt-16">
+        <Reveal as="section" className="relative mt-16" variant="paper">
           <PolaroidNote rotate="1.8deg">
             <p className="text-center font-hand text-xl text-forest">место встречи</p>
             <p className="mt-3 text-center font-script text-2xl text-burgundy">
@@ -190,22 +211,22 @@ function Invitation() {
               href="https://maps.google.com/?q=Подмосковье+Орлово+Липовая+аллея+7"
               target="_blank"
               rel="noreferrer"
-              className="mt-4 block text-center font-hand text-lg text-burgundy underline decoration-burgundy/40 underline-offset-4"
+              className="ink-link mt-4 mx-auto block w-fit text-center font-hand text-lg text-burgundy"
             >
               открыть на карте →
             </a>
           </PolaroidNote>
-        </section>
+        </Reveal>
 
         {/* Dress code */}
-        <section className="relative mt-20 text-center">
+        <Reveal as="section" className="relative mt-20 text-center" variant="paper">
           <img
             src={bouquet}
             alt=""
             width={512}
             height={640}
             loading="lazy"
-            className="mx-auto w-28 opacity-85 deco-rotate-left"
+            className="mx-auto w-28 opacity-85 deco-rotate-left animate-float-slow"
           />
           <h2 className="mt-3 font-script text-3xl text-burgundy">дресс-код</h2>
           <p className="mt-3 font-hand text-xl text-forest">бордо · олива · бежевый</p>
@@ -214,18 +235,18 @@ function Invitation() {
           </p>
 
           <div className="mt-6 flex items-center justify-center gap-3">
-            {["#6b2535", "#4a5d3a", "#c9b48a"].map((c) => (
+            {["#6b2535", "#4a5d3a", "#c9b48a"].map((c, i) => (
               <span
                 key={c}
-                className="h-9 w-9 rounded-full border border-border/60 shadow-inner"
-                style={{ backgroundColor: c }}
+                className="h-9 w-9 rounded-full border border-border/60 shadow-inner animate-pop"
+                style={{ backgroundColor: c, animationDelay: `${i * 120}ms` }}
               />
             ))}
           </div>
-        </section>
+        </Reveal>
 
         {/* RSVP */}
-        <section className="relative mt-20">
+        <Reveal as="section" className="relative mt-20" variant="paper">
           <PolaroidNote rotate="-1.2deg">
             <div className="text-center">
               <h2 className="font-script text-3xl text-burgundy">подтвердите участие</h2>
@@ -238,24 +259,24 @@ function Invitation() {
               <RsvpForm />
             </div>
           </PolaroidNote>
-        </section>
+        </Reveal>
 
         {/* Footer */}
-        <footer className="relative mt-20 text-center">
+        <Reveal as="footer" className="relative mt-20 text-center" variant="fade">
           <img
             src={heart}
             alt=""
             width={512}
             height={512}
             loading="lazy"
-            className="mx-auto w-14 opacity-70 -rotate-12"
+            className="mx-auto w-14 opacity-70 -rotate-12 animate-float"
           />
           <p className="mt-2 font-script text-2xl text-burgundy">до встречи</p>
           <p className="font-hand text-xl text-forest">А. & М.</p>
           <p className="mt-6 font-marker text-xs uppercase tracking-[0.3em] text-ink/50">
             14 · 09 · 2026
           </p>
-        </footer>
+        </Reveal>
       </div>
       <Toaster position="top-center" />
     </main>
