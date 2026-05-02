@@ -52,9 +52,9 @@ function Invitation() {
     <main className="min-h-screen overflow-hidden">
       <div className="mx-auto w-full max-w-md px-5 pb-24 pt-10 sm:max-w-lg sm:px-8">
 
-        {/* Header */}
+        {/* Header sketch */}
         <header className="relative text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-forest">
+          <p className="font-hand text-2xl text-forest tracking-wide">
             — с радостью приглашаем —
           </p>
 
@@ -66,15 +66,15 @@ function Invitation() {
               height={1024}
               className="mx-auto w-44 opacity-80 deco-rotate-left"
             />
-            <h1 className="mt-3 text-4xl font-extrabold uppercase leading-[1.05] tracking-tight text-burgundy">
+            <h1 className="font-script text-[2.6rem] leading-[1.1] text-burgundy mt-2">
               Анна
-              <span className="block py-1 text-2xl font-semibold text-forest">&</span>
+              <span className="block font-hand text-3xl text-forest -my-1">&</span>
               Михаил
             </h1>
-            <div className="mx-auto mt-4 h-3 w-40 ink-line" />
+            <div className="mx-auto mt-3 h-3 w-40 ink-line" />
           </div>
 
-          <p className="mx-auto mt-6 max-w-xs text-base font-normal leading-relaxed text-ink/80">
+          <p className="mt-6 font-hand text-xl text-ink/80 leading-snug">
             наконец-то решились<br />
             и зовём вас праздновать<br />
             самый важный день
@@ -84,23 +84,21 @@ function Invitation() {
         {/* Date card */}
         <section className="relative mt-14">
           <PolaroidNote rotate="-1.5deg">
-            <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-forest">
-              сохраните дату
-            </p>
-            <div className="mt-4 flex items-center justify-center gap-4">
+            <p className="font-hand text-center text-lg text-forest">сохраните дату</p>
+            <div className="mt-3 flex items-center justify-center gap-4">
               <div className="text-center">
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-ink/60">пн</p>
-                <p className="text-3xl font-extrabold text-burgundy">14</p>
+                <p className="font-marker text-sm uppercase tracking-widest text-ink/60">пн</p>
+                <p className="font-script text-3xl text-burgundy">14</p>
               </div>
-              <div className="h-12 w-px bg-border" />
+              <div className="h-14 w-px bg-border" />
               <div className="text-center">
-                <p className="text-sm font-semibold uppercase tracking-wider text-ink leading-none">сентября</p>
-                <p className="mt-1 text-base font-extrabold text-forest">2026</p>
+                <p className="font-script text-2xl text-ink leading-none">сентября</p>
+                <p className="font-hand text-xl text-forest">2026</p>
               </div>
-              <div className="h-12 w-px bg-border" />
+              <div className="h-14 w-px bg-border" />
               <div className="text-center">
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-ink/60">в</p>
-                <p className="text-3xl font-extrabold text-burgundy">16:00</p>
+                <p className="font-marker text-sm uppercase tracking-widest text-ink/60">в</p>
+                <p className="font-script text-3xl text-burgundy">16:00</p>
               </div>
             </div>
           </PolaroidNote>
@@ -124,43 +122,43 @@ function Invitation() {
             loading="lazy"
             className="mx-auto w-24 opacity-80 deco-rotate-right"
           />
-          <h2 className="mt-3 text-2xl font-extrabold uppercase tracking-tight text-burgundy">
-            наша история
-          </h2>
-          <p className="mx-auto mt-4 max-w-sm text-[0.95rem] font-normal leading-relaxed text-ink/85">
+          <h2 className="mt-3 font-script text-3xl text-burgundy">наша история</h2>
+          <p className="mx-auto mt-4 max-w-sm font-serif-display text-[1.05rem] leading-relaxed text-ink/85">
             Семь лет, тысяча чашек кофе, два переезда и один маленький рыжий кот спустя —
             мы поняли, что хотим праздновать всё это вместе. Всегда.
           </p>
-          <p className="mt-4 text-base font-semibold text-forest">
+          <p className="mt-4 font-hand text-xl text-forest">
             …и хотим, чтобы вы были рядом ♡
           </p>
         </section>
 
         {/* Schedule */}
         <section className="relative mt-20">
-          <h2 className="text-center text-2xl font-extrabold uppercase tracking-tight text-burgundy">
-            программа дня
-          </h2>
+          <h2 className="text-center font-script text-3xl text-burgundy">программа дня</h2>
           <div className="mx-auto mt-2 h-3 w-32 ink-line" />
 
-          <ul className="mt-8 space-y-6">
+          <ul className="mt-8 space-y-7">
             {[
               { time: "16:00", title: "церемония", note: "в саду, под старой яблоней" },
               { time: "17:00", title: "фуршет & фото", note: "шампанское и объятия" },
               { time: "19:00", title: "ужин", note: "длинный стол при свечах" },
               { time: "21:00", title: "танцы до утра", note: "обещаем медляки" },
-            ].map((item) => (
-              <li key={item.time} className="relative flex items-start gap-5">
+            ].map((item, i) => (
+              <li
+                key={item.time}
+                className="relative flex items-start gap-5"
+                style={{ transform: `rotate(${i % 2 === 0 ? "-0.6deg" : "0.7deg"})` }}
+              >
                 <div className="shrink-0">
-                  <p className="text-xl font-extrabold leading-none text-burgundy">
+                  <p className="font-script text-2xl text-burgundy leading-none">
                     {item.time}
                   </p>
                 </div>
-                <div className="border-l-2 border-dashed border-forest/40 pl-4">
-                  <p className="text-base font-semibold uppercase tracking-wide leading-tight text-forest">
+                <div className="mt-1 border-l-2 border-dashed border-forest/40 pl-4">
+                  <p className="font-hand text-2xl text-forest leading-none">
                     {item.title}
                   </p>
-                  <p className="mt-1 text-sm font-normal text-ink/70">
+                  <p className="mt-1 font-serif-display italic text-ink/70">
                     {item.note}
                   </p>
                 </div>
@@ -181,20 +179,18 @@ function Invitation() {
         {/* Place */}
         <section className="relative mt-16">
           <PolaroidNote rotate="1.8deg">
-            <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-forest">
-              место встречи
-            </p>
-            <p className="mt-3 text-center text-xl font-extrabold uppercase tracking-tight text-burgundy">
+            <p className="text-center font-hand text-xl text-forest">место встречи</p>
+            <p className="mt-3 text-center font-script text-2xl text-burgundy">
               усадьба «Старый сад»
             </p>
-            <p className="mt-2 text-center text-sm font-normal text-ink/80">
+            <p className="mt-2 text-center font-serif-display text-ink/80">
               Подмосковье, дер. Орлово,<br />ул. Липовая аллея, 7
             </p>
             <a
               href="https://maps.google.com/?q=Подмосковье+Орлово+Липовая+аллея+7"
               target="_blank"
               rel="noreferrer"
-              className="mt-4 block text-center text-sm font-semibold uppercase tracking-wider text-burgundy underline decoration-burgundy/40 underline-offset-4"
+              className="mt-4 block text-center font-hand text-lg text-burgundy underline decoration-burgundy/40 underline-offset-4"
             >
               открыть на карте →
             </a>
@@ -211,13 +207,9 @@ function Invitation() {
             loading="lazy"
             className="mx-auto w-28 opacity-85 deco-rotate-left"
           />
-          <h2 className="mt-3 text-2xl font-extrabold uppercase tracking-tight text-burgundy">
-            дресс-код
-          </h2>
-          <p className="mt-3 text-base font-semibold uppercase tracking-wider text-forest">
-            бордо · олива · бежевый
-          </p>
-          <p className="mx-auto mt-3 max-w-xs text-sm font-normal text-ink/75">
+          <h2 className="mt-3 font-script text-3xl text-burgundy">дресс-код</h2>
+          <p className="mt-3 font-hand text-xl text-forest">бордо · олива · бежевый</p>
+          <p className="mx-auto mt-3 max-w-xs font-serif-display italic text-ink/75">
             никакой строгости — только уют, мягкие ткани и улыбки
           </p>
 
@@ -236,12 +228,10 @@ function Invitation() {
         <section className="relative mt-20">
           <PolaroidNote rotate="-1.2deg">
             <div className="text-center">
-              <h2 className="text-2xl font-extrabold uppercase tracking-tight text-burgundy">
-                подтвердите участие
-              </h2>
-              <p className="mt-2 text-sm font-normal text-ink/80">
+              <h2 className="font-script text-3xl text-burgundy">подтвердите участие</h2>
+              <p className="mt-2 font-serif-display text-ink/80">
                 ответьте, пожалуйста, до{" "}
-                <span className="font-extrabold text-burgundy">1 августа</span>
+                <span className="font-hand text-burgundy">1 августа</span>
               </p>
             </div>
             <div className="mt-6">
@@ -260,11 +250,9 @@ function Invitation() {
             loading="lazy"
             className="mx-auto w-14 opacity-70 -rotate-12"
           />
-          <p className="mt-2 text-xl font-extrabold uppercase tracking-tight text-burgundy">
-            до встречи
-          </p>
-          <p className="text-base font-semibold text-forest">А. & М.</p>
-          <p className="mt-6 text-[10px] font-semibold uppercase tracking-[0.3em] text-ink/50">
+          <p className="mt-2 font-script text-2xl text-burgundy">до встречи</p>
+          <p className="font-hand text-xl text-forest">А. & М.</p>
+          <p className="mt-6 font-marker text-xs uppercase tracking-[0.3em] text-ink/50">
             14 · 09 · 2026
           </p>
         </footer>
