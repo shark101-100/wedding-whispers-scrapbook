@@ -2,7 +2,7 @@
 @source "../src";
 @import "tw-animate-css";
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Homemade+Apple&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&display=swap&subset=cyrillic,cyrillic-ext,latin,latin-ext');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -91,10 +91,10 @@
   --beige: oklch(0.86 0.04 75);
   --beige-deep: oklch(0.78 0.06 70);
 
-  --font-script: 'Homemade Apple', cursive;
-  --font-hand: 'Caveat', cursive;
-  --font-marker: 'Shadows Into Light', cursive;
-  --font-serif: 'Cormorant Garamond', serif;
+  --font-script: 'Unbounded', sans-serif;
+  --font-hand: 'Unbounded', sans-serif;
+  --font-marker: 'Unbounded', sans-serif;
+  --font-serif: 'Unbounded', sans-serif;
   --card: oklch(0.97 0.02 80);
   --card-foreground: var(--ink);
   --popover: oklch(0.97 0.02 80);
