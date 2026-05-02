@@ -183,7 +183,7 @@ export function RsvpForm() {
       <button
         type="submit"
         disabled={loading}
-        className="block w-full rounded-sm border-2 border-burgundy bg-burgundy py-3 font-hand text-xl text-primary-foreground transition hover:bg-burgundy/90 disabled:opacity-60"
+        className="wiggle-hover block w-full rounded-sm border-2 border-burgundy bg-burgundy py-3 font-hand text-xl text-primary-foreground hover:bg-burgundy/90 disabled:opacity-60 active:scale-[0.98]"
       >
         {loading ? "отправляем…" : "отправить ответ"}
       </button>
