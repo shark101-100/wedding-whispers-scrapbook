@@ -5,6 +5,11 @@ import bouquet from "@/assets/bouquet.png";
 import rings from "@/assets/rings.png";
 import rose from "@/assets/rose.png";
 import heart from "@/assets/heart.png";
+import cake from "@/assets/cake.png";
+import disco from "@/assets/disco.png";
+import eat from "@/assets/eat.png";
+import rings2 from "@/assets/rings-2.png";
+import glasses2 from "@/assets/glasses-2.png";
 import { RsvpForm } from "@/components/RsvpForm";
 import { Toaster } from "@/components/ui/sonner";
 import { Reveal } from "@/components/Reveal";
@@ -63,14 +68,14 @@ function Invitation() {
           </p>
 
           <div className="relative mt-6">
-            <img
+            {/* <img
               src={florals}
               alt=""
               width={768}
               height={1024}
               className="mx-auto w-44 opacity-80 deco-rotate-left animate-sketch-in"
               style={{ animationDelay: "150ms" }}
-            />
+            /> */}
             <h1
               className="font-script text-[2.6rem] leading-[1.1] text-burgundy mt-2 animate-paper-in"
               style={{ animationDelay: "300ms" }}
@@ -89,8 +94,7 @@ function Invitation() {
             className="mt-6 font-hand text-xl text-ink/80 leading-snug animate-paper-in"
             style={{ animationDelay: "450ms" }}
           >
-            наконец-то решились<br />
-            и зовём вас праздновать<br />
+            Зовём вас праздновать<br />
             самый важный день
           </p>
         </header>
@@ -154,11 +158,11 @@ function Invitation() {
 
           <ul className="mt-10 space-y-14">
             {[
-              { time: "16:00", title: "сбор гостей у ЗАГСа", note: "встречаемся, обнимаемся", image: "", side: "left" as const },
-              { time: "16:30", title: "регистрация", note: "два «я» переплетаются в одно «навсегда»", image: "", side: "right" as const },
-              { time: "17:10", title: "сбор гостей на банкет", note: "готовим аппетит и тосты", image: "", side: "left" as const },
-              { time: "17:30", title: "банкет", note: "время вкусной еды и развлечений", image: "", side: "right" as const },
-              { time: "22:00", title: "торт", note: "сладкий символ нашей новой счастливой жизни", image: "", side: "left" as const },
+              { time: "15:30", title: "сбор гостей", note: "", image: "", side: "left" as const },
+              { time: "16:00", title: "церемония", note: "", image: "", side: "right" as const },
+              { time: "17:00", title: "праздничный ужин", note: "", image: "", side: "left" as const },
+              { time: "22:00", title: "торт", note: "", image: "", side: "right" as const },
+              { time: "23:00", title: "завершение вечера", note: "", image: "", side: "left" as const },
             ].map((item, i) => (
               <Reveal
                 key={item.time}
@@ -176,7 +180,7 @@ function Invitation() {
                         style={{ transform: `rotate(${i % 2 === 0 ? "-4deg" : "-2deg"})` }}
                       >
                         {item.image ? (
-                          <img src={item.image} alt="" loading="lazy" className="h-full w-full object-contain" />
+                          <img src={cake} alt="" loading="lazy" className="h-full w-full object-contain" />
                         ) : (
                           <div className="flex h-full w-full items-center justify-center border border-dashed border-burgundy/30 font-marker text-[0.6rem] uppercase tracking-wider text-burgundy/40">
                             фото
@@ -205,7 +209,7 @@ function Invitation() {
                         style={{ transform: `rotate(${i % 2 === 0 ? "4deg" : "2deg"})` }}
                       >
                         {item.image ? (
-                          <img src={item.image} alt="" loading="lazy" className="h-full w-full object-contain" />
+                          <img src={eat} alt="" loading="lazy" className="h-full w-full object-contain" />
                         ) : (
                           <div className="flex h-full w-full items-center justify-center border border-dashed border-burgundy/30 font-marker text-[0.6rem] uppercase tracking-wider text-burgundy/40">
                             фото
