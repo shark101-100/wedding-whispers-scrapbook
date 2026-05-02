@@ -1,0 +1,1 @@
+drop policy "anyone can read rsvps" on public.rsvps;
