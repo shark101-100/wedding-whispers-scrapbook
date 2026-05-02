@@ -29,14 +29,18 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Приглашение на свадьбу" },
+      { name: "description", content: "Приглашение на свадьбу Виктории и Егора" },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Приглашение на свадьбу" },
+      { property: "og:description", content: "Приглашение на свадьбу Виктории и Егора" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Приглашение на свадьбу" },
+      { name: "twitter:description", content: "Приглашение на свадьбу Виктории и Егора" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d05a2216-42af-4c60-945c-f90b6a4fc839/id-preview-f765dce7--b3a3543a-bc13-4ed8-aa13-f8d23be5b92e.lovable.app-1777748552762.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d05a2216-42af-4c60-945c-f90b6a4fc839/id-preview-f765dce7--b3a3543a-bc13-4ed8-aa13-f8d23be5b92e.lovable.app-1777748552762.png" },
     ],
     links: [
       {
