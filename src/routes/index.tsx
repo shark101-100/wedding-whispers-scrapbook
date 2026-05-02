@@ -155,10 +155,10 @@ function Invitation() {
 
           <ul className="mt-8 space-y-7">
             {[
-              { time: "15:30", title: "церемония", note: "в саду, под старой яблоней" },
-              { time: "16:00", title: "фуршет & фото", note: "шампанское и объятия" },
-              { time: "17:00", title: "ужин", note: "длинный стол при свечах" },
-              { time: "23:00", title: "танцы до утра", note: "обещаем медляки" },
+              { time: "15:30", title: "церемония", note: "в саду, под старой яблоней", image: "" },
+              { time: "16:00", title: "фуршет & фото", note: "шампанское и объятия", image: "" },
+              { time: "17:00", title: "ужин", note: "длинный стол при свечах", image: "" },
+              { time: "23:00", title: "танцы до утра", note: "обещаем медляки", image: "" },
             ].map((item, i) => (
               <Reveal
                 key={item.time}
@@ -168,10 +168,29 @@ function Invitation() {
                 className="relative flex items-start gap-5"
                 style={{ transform: `rotate(${i % 2 === 0 ? "-0.6deg" : "0.7deg"})` }}
               >
-                <div className="shrink-0">
+                <div className="shrink-0 flex flex-col items-center gap-2">
                   <p className="font-script text-2xl text-burgundy leading-none">
                     {item.time}
                   </p>
+                  {/* Placeholder для картинки пункта программы. Подставь src вручную. */}
+                  <div
+                    className="relative h-16 w-16 bg-card border border-border/60 shadow-[0_4px_10px_-6px_oklch(0_0_0/0.2)] overflow-hidden"
+                    style={{ transform: `rotate(${i % 2 === 0 ? "2deg" : "-2deg"})` }}
+                  >
+                    <span className="tape -top-1.5 left-1/2 -translate-x-1/2 !w-10 !h-3" />
+                    {item.image ? (
+                      <img
+                        src={item.image}
+                        alt=""
+                        loading="lazy"
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center font-marker text-[0.6rem] uppercase tracking-wider text-ink/30">
+                        фото
+                      </div>
+                    )}
+                  </div>
                 </div>
                 <div className="mt-1 border-l-2 border-dashed border-forest/40 pl-4">
                   <p className="font-hand text-2xl text-forest leading-none">
