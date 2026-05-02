@@ -69,10 +69,18 @@ export function RsvpForm() {
           width={512}
           height={512}
           loading="lazy"
-          className="mx-auto w-20 opacity-85"
+          className="mx-auto w-20 opacity-85 animate-sketch-in animate-float"
         />
-        <p className="mt-3 font-script text-3xl text-burgundy">спасибо!</p>
-        <p className="mt-2 font-hand text-xl text-forest">
+        <p
+          className="mt-3 font-script text-3xl text-burgundy animate-paper-in"
+          style={{ animationDelay: "150ms" }}
+        >
+          спасибо!
+        </p>
+        <p
+          className="mt-2 font-hand text-xl text-forest animate-paper-in"
+          style={{ animationDelay: "300ms" }}
+        >
           {attending
             ? "ждём встречи с вами ♡"
             : "будем скучать — обнимаем"}
@@ -93,7 +101,7 @@ export function RsvpForm() {
           onChange={(e) => setName(e.target.value)}
           maxLength={100}
           placeholder="Анна и Пётр"
-          className="w-full bg-transparent border-0 border-b-2 border-dashed border-ink/40 focus:border-burgundy focus:outline-none py-2 font-serif-display text-lg text-ink placeholder:text-ink/30"
+          className="w-full bg-transparent border-0 border-b-2 border-dashed border-ink/40 focus:border-burgundy focus:outline-none py-2 font-serif-display text-lg text-ink placeholder:text-ink/30 transition-colors"
           required
         />
       </div>
@@ -104,9 +112,9 @@ export function RsvpForm() {
           <button
             type="button"
             onClick={() => setAttending(true)}
-            className={`py-3 border-2 font-hand text-xl transition rounded-sm ${
+            className={`py-3 border-2 font-hand text-xl rounded-sm tilt-hover ${
               attending === true
-                ? "bg-burgundy text-primary-foreground border-burgundy"
+                ? "bg-burgundy text-primary-foreground border-burgundy animate-stamp"
                 : "border-burgundy text-burgundy hover:bg-burgundy/5"
             }`}
           >
@@ -115,9 +123,9 @@ export function RsvpForm() {
           <button
             type="button"
             onClick={() => setAttending(false)}
-            className={`py-3 border-2 border-dashed font-hand text-xl transition rounded-sm ${
+            className={`py-3 border-2 border-dashed font-hand text-xl rounded-sm tilt-hover-r ${
               attending === false
-                ? "bg-forest text-accent-foreground border-forest"
+                ? "bg-forest text-accent-foreground border-forest animate-stamp"
                 : "border-forest text-forest hover:bg-forest/5"
             }`}
           >
@@ -127,7 +135,7 @@ export function RsvpForm() {
       </div>
 
       {attending === true && (
-        <div>
+        <div className="animate-paper-in">
           <label className="font-hand text-lg text-forest block mb-2">
             сколько вас будет?
           </label>
@@ -135,18 +143,21 @@ export function RsvpForm() {
             <button
               type="button"
               onClick={() => setCount((c) => Math.max(1, c - 1))}
-              className="h-10 w-10 rounded-full border-2 border-burgundy font-hand text-2xl text-burgundy leading-none"
+              className="h-10 w-10 rounded-full border-2 border-burgundy font-hand text-2xl text-burgundy leading-none transition-transform active:scale-90 hover:-rotate-3"
               aria-label="меньше"
             >
               −
             </button>
-            <span className="font-script text-4xl text-burgundy w-12 text-center">
+            <span
+              key={count}
+              className="font-script text-4xl text-burgundy w-12 text-center animate-pop inline-block"
+            >
               {count}
             </span>
             <button
               type="button"
               onClick={() => setCount((c) => Math.min(10, c + 1))}
-              className="h-10 w-10 rounded-full border-2 border-burgundy font-hand text-2xl text-burgundy leading-none"
+              className="h-10 w-10 rounded-full border-2 border-burgundy font-hand text-2xl text-burgundy leading-none transition-transform active:scale-90 hover:rotate-3"
               aria-label="больше"
             >
               +
