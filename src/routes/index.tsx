@@ -13,16 +13,16 @@ export const Route = createFileRoute("/")({
   component: Invitation,
   head: () => ({
     meta: [
-      { title: "Анна & Михаил — приглашение на свадьбу" },
+      { title: "Виктория & Егор — приглашение на свадьбу" },
       {
         name: "description",
         content:
-          "С любовью приглашаем вас разделить с нами день нашей свадьбы — 14 сентября 2026 года.",
+          "С любовью приглашаем вас разделить с нами день нашей свадьбы — 5 июля 2026 года.",
       },
-      { property: "og:title", content: "Анна & Михаил — наша свадьба" },
+      { property: "og:title", content: "Виктория & Егор — наша свадьба" },
       {
         property: "og:description",
-        content: "14 сентября 2026 — будем счастливы видеть вас рядом.",
+        content: "5 июля 2026 — будем счастливы видеть вас рядом.",
       },
     ],
   }),
@@ -75,9 +75,9 @@ function Invitation() {
               className="font-script text-[2.6rem] leading-[1.1] text-burgundy mt-2 animate-paper-in"
               style={{ animationDelay: "300ms" }}
             >
-              Анна
+              Виктория
               <span className="block font-hand text-3xl text-forest -my-1">&</span>
-              Михаил
+              Егор
             </h1>
             <div
               className="mx-auto mt-3 h-3 w-40 ink-line animate-ink-draw"
@@ -101,18 +101,18 @@ function Invitation() {
             <p className="font-hand text-center text-lg text-forest">сохраните дату</p>
             <div className="mt-3 flex items-center justify-center gap-4">
               <div className="text-center">
-                <p className="font-marker text-sm uppercase tracking-widest text-ink/60">пн</p>
-                <p className="font-script text-3xl text-burgundy">14</p>
+                <p className="font-marker text-sm uppercase tracking-widest text-ink/60">вс</p>
+                <p className="font-script text-3xl text-burgundy">5</p>
               </div>
               <div className="h-14 w-px bg-border" />
               <div className="text-center">
-                <p className="font-script text-2xl text-ink leading-none">сентября</p>
+                <p className="font-script text-2xl text-ink leading-none">июля</p>
                 <p className="font-hand text-xl text-forest">2026</p>
               </div>
               <div className="h-14 w-px bg-border" />
               <div className="text-center">
                 <p className="font-marker text-sm uppercase tracking-widest text-ink/60">в</p>
-                <p className="font-script text-3xl text-burgundy">16:00</p>
+                <p className="font-script text-3xl text-burgundy">15:30</p>
               </div>
             </div>
           </PolaroidNote>
@@ -155,10 +155,10 @@ function Invitation() {
 
           <ul className="mt-8 space-y-7">
             {[
-              { time: "16:00", title: "церемония", note: "в саду, под старой яблоней" },
-              { time: "17:00", title: "фуршет & фото", note: "шампанское и объятия" },
-              { time: "19:00", title: "ужин", note: "длинный стол при свечах" },
-              { time: "21:00", title: "танцы до утра", note: "обещаем медляки" },
+              { time: "15:30", title: "церемония", note: "в саду, под старой яблоней" },
+              { time: "16:00", title: "фуршет & фото", note: "шампанское и объятия" },
+              { time: "17:00", title: "ужин", note: "длинный стол при свечах" },
+              { time: "23:00", title: "танцы до утра", note: "обещаем медляки" },
             ].map((item, i) => (
               <Reveal
                 key={item.time}
@@ -202,13 +202,13 @@ function Invitation() {
           <PolaroidNote rotate="1.8deg">
             <p className="text-center font-hand text-xl text-forest">место встречи</p>
             <p className="mt-3 text-center font-script text-2xl text-burgundy">
-              усадьба «Старый сад»
+              гостиница «Ариадна»
             </p>
             <p className="mt-2 text-center font-serif-display text-ink/80">
-              Подмосковье, дер. Орлово,<br />ул. Липовая аллея, 7
+              Самара, пос. Волжский,<br />Жилгородок, 45В.
             </p>
             <a
-              href="https://maps.google.com/?q=Подмосковье+Орлово+Липовая+аллея+7"
+              href="https://yandex.com/maps/-/CPS34Y8I"
               target="_blank"
               rel="noreferrer"
               className="ink-link mt-4 mx-auto block w-fit text-center font-hand text-lg text-burgundy"

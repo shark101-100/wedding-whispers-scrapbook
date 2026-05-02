@@ -262,7 +262,7 @@ export function RsvpForm() {
           <button
             type="button"
             onClick={() => setAttending(true)}
-            className={`py-3 border-2 font-hand text-xl rounded-sm tilt-hover ${
+            className={`py-3 border-2 border-dashed font-hand text-xl rounded-sm tilt-hover ${
               attending === true
                 ? "bg-burgundy text-primary-foreground border-burgundy animate-stamp"
                 : "border-burgundy text-burgundy hover:bg-burgundy/5"
