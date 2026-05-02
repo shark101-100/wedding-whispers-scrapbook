@@ -2,6 +2,8 @@
 @source "../src";
 @import "tw-animate-css";
 
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Homemade+Apple&family=Shadows+Into+Light&display=swap');
+
 @custom-variant dark (&:is(.dark *));
 
 /*
@@ -63,8 +65,25 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+
+  /* Wedding scrapbook palette — warm muted tones */
+  --background: oklch(0.965 0.018 85);          /* warm cream paper */
+  --foreground: oklch(0.32 0.04 40);            /* soft dark ink brown */
+  --paper: oklch(0.955 0.022 80);
+  --paper-deep: oklch(0.92 0.028 75);
+  --ink: oklch(0.28 0.03 40);
+
+  --burgundy: oklch(0.42 0.13 20);              /* muted bordeaux */
+  --burgundy-soft: oklch(0.55 0.11 22);
+  --forest: oklch(0.38 0.06 145);               /* dark muted green */
+  --forest-soft: oklch(0.5 0.07 145);
+  --beige: oklch(0.86 0.04 75);
+  --beige-deep: oklch(0.78 0.06 70);
+
+  --font-script: 'Homemade Apple', cursive;
+  --font-hand: 'Caveat', cursive;
+  --font-marker: 'Shadows Into Light', cursive;
+  --font-serif: 'Cormorant Garamond', serif;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
