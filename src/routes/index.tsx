@@ -146,74 +146,78 @@ function Invitation() {
           </p>
         </Reveal>
 
-        {/* Schedule */}
+        {/* Schedule — «Тайминг» */}
         <section className="relative mt-20">
           <Reveal variant="paper">
-            <h2 className="text-center font-script text-3xl text-burgundy">программа дня</h2>
-            <div className="mx-auto mt-2 h-3 w-32 ink-line" />
+            <h2 className="text-center font-script text-4xl text-forest">Тайминг</h2>
           </Reveal>
 
-          <ul className="mt-8 space-y-7">
+          <ul className="mt-10 space-y-14">
             {[
-              { time: "15:30", title: "церемония", note: "в саду, под старой яблоней", image: "" },
-              { time: "16:00", title: "фуршет & фото", note: "шампанское и объятия", image: "" },
-              { time: "17:00", title: "ужин", note: "длинный стол при свечах", image: "" },
-              { time: "23:00", title: "танцы до утра", note: "обещаем медляки", image: "" },
+              { time: "16:00", title: "сбор гостей у ЗАГСа", note: "встречаемся, обнимаемся", image: "", side: "left" as const },
+              { time: "16:30", title: "регистрация", note: "два «я» переплетаются в одно «навсегда»", image: "", side: "right" as const },
+              { time: "17:10", title: "сбор гостей на банкет", note: "готовим аппетит и тосты", image: "", side: "left" as const },
+              { time: "17:30", title: "банкет", note: "время вкусной еды и развлечений", image: "", side: "right" as const },
+              { time: "22:00", title: "торт", note: "сладкий символ нашей новой счастливой жизни", image: "", side: "left" as const },
             ].map((item, i) => (
               <Reveal
                 key={item.time}
                 as="li"
                 variant="paper"
-                delay={i * 120}
-                className="relative flex items-start gap-5"
-                style={{ transform: `rotate(${i % 2 === 0 ? "-0.6deg" : "0.7deg"})` }}
+                delay={i * 100}
+                className="relative"
               >
-                <div className="shrink-0 flex flex-col items-center gap-2">
-                  <p className="font-script text-2xl text-burgundy leading-none">
-                    {item.time}
-                  </p>
-                  {/* Placeholder для картинки пункта программы. Подставь src вручную. */}
-                  <div
-                    className="relative h-16 w-16 bg-card border border-border/60 shadow-[0_4px_10px_-6px_oklch(0_0_0/0.2)] overflow-hidden"
-                    style={{ transform: `rotate(${i % 2 === 0 ? "2deg" : "-2deg"})` }}
-                  >
-                    <span className="tape -top-1.5 left-1/2 -translate-x-1/2 !w-10 !h-3" />
-                    {item.image ? (
-                      <img
-                        src={item.image}
-                        alt=""
-                        loading="lazy"
-                        className="h-full w-full object-cover"
-                      />
-                    ) : (
-                      <div className="flex h-full w-full items-center justify-center font-marker text-[0.6rem] uppercase tracking-wider text-ink/30">
-                        фото
+                <div className="relative flex items-stretch gap-3">
+                  {/* Левая иллюстрация */}
+                  <div className="w-20 sm:w-24 shrink-0 flex items-center justify-center">
+                    {item.side === "left" && (
+                      <div
+                        className="relative h-20 w-20 sm:h-24 sm:w-24 overflow-hidden"
+                        style={{ transform: `rotate(${i % 2 === 0 ? "-4deg" : "-2deg"})` }}
+                      >
+                        {item.image ? (
+                          <img src={item.image} alt="" loading="lazy" className="h-full w-full object-contain" />
+                        ) : (
+                          <div className="flex h-full w-full items-center justify-center border border-dashed border-burgundy/30 font-marker text-[0.6rem] uppercase tracking-wider text-burgundy/40">
+                            фото
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Центральный блок: подпись · время · описание */}
+                  <div className="flex-1 text-center">
+                    <p className="font-hand text-base text-forest">{item.title}</p>
+                    <p className="font-script text-5xl sm:text-6xl text-burgundy leading-none mt-2">
+                      {item.time}
+                    </p>
+                    <p className="mt-2 font-serif-display text-xs sm:text-sm text-ink/75 italic">
+                      {item.note}
+                    </p>
+                  </div>
+
+                  {/* Правая иллюстрация */}
+                  <div className="w-20 sm:w-24 shrink-0 flex items-center justify-center">
+                    {item.side === "right" && (
+                      <div
+                        className="relative h-20 w-20 sm:h-24 sm:w-24 overflow-hidden"
+                        style={{ transform: `rotate(${i % 2 === 0 ? "4deg" : "2deg"})` }}
+                      >
+                        {item.image ? (
+                          <img src={item.image} alt="" loading="lazy" className="h-full w-full object-contain" />
+                        ) : (
+                          <div className="flex h-full w-full items-center justify-center border border-dashed border-burgundy/30 font-marker text-[0.6rem] uppercase tracking-wider text-burgundy/40">
+                            фото
+                          </div>
+                        )}
                       </div>
                     )}
                   </div>
                 </div>
-                <div className="mt-1 border-l-2 border-dashed border-forest/40 pl-4">
-                  <p className="font-hand text-2xl text-forest leading-none">
-                    {item.title}
-                  </p>
-                  <p className="mt-1 font-serif-display italic text-ink/70">
-                    {item.note}
-                  </p>
-                </div>
               </Reveal>
             ))}
           </ul>
-
-          <Reveal variant="sketch" delay={200}>
-            <img
-              src={glasses}
-              alt=""
-              width={512}
-              height={512}
-              loading="lazy"
-              className="mx-auto mt-10 w-28 opacity-85 animate-float-slow"
-            />
-          </Reveal>
         </section>
 
         {/* Place */}
