@@ -226,34 +226,16 @@ function Invitation() {
 
         {/* RSVP */}
         <section className="relative mt-20">
-          <PolaroidNote rotate="-1.2deg" className="text-center">
-            <img
-              src={rings}
-              alt=""
-              width={512}
-              height={512}
-              loading="lazy"
-              className="mx-auto w-20 opacity-85"
-            />
-            <h2 className="mt-1 font-script text-3xl text-burgundy">подтвердите участие</h2>
-            <p className="mt-2 font-serif-display text-ink/80">
-              напишите нам до{" "}
-              <span className="font-hand text-burgundy">1 августа</span>
-            </p>
-
-            <div className="mt-5 space-y-3">
-              <a
-                href="https://t.me/anna"
-                className="block w-full rounded-sm border-2 border-burgundy bg-transparent py-3 font-hand text-xl text-burgundy transition hover:bg-burgundy hover:text-primary-foreground"
-              >
-                написать Анне
-              </a>
-              <a
-                href="tel:+79991234567"
-                className="block w-full rounded-sm border-2 border-dashed border-forest py-3 font-hand text-xl text-forest transition hover:bg-forest hover:text-accent-foreground"
-              >
-                позвонить Михаилу
-              </a>
+          <PolaroidNote rotate="-1.2deg">
+            <div className="text-center">
+              <h2 className="font-script text-3xl text-burgundy">подтвердите участие</h2>
+              <p className="mt-2 font-serif-display text-ink/80">
+                ответьте, пожалуйста, до{" "}
+                <span className="font-hand text-burgundy">1 августа</span>
+              </p>
+            </div>
+            <div className="mt-6">
+              <RsvpForm />
             </div>
           </PolaroidNote>
         </section>
@@ -275,6 +257,7 @@ function Invitation() {
           </p>
         </footer>
       </div>
+      <Toaster position="top-center" />
     </main>
   );
 }
