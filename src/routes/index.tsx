@@ -268,7 +268,7 @@ function Invitation() {
               href="https://yandex.com/maps/-/CPS34Y8I"
               target="_blank"
               rel="noreferrer"
-              className="ink-link mt-4 mx-auto block w-fit text-center font-hand text-lg text-burgundy"
+              className="ink-link mt-4 mx-auto block w-fit font-hand text-lg text-burgundy text-justify"
             >
               открыть на карте →
             </a>
