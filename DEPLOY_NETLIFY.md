@@ -6,18 +6,12 @@ Lovable-превью продолжает работать как раньше (
 ## 1. Подключите проект к GitHub
 В Lovable: **GitHub → Connect to GitHub** и запушьте репо.
 
-## 2. Установите Netlify-адаптер
-Локально (или через Lovable-чат) выполните:
-```
-bun add -d @tanstack/start-adapter-netlify
-```
+## 2. Netlify-плагин и скрипт уже настроены
+- `@netlify/vite-plugin-tanstack-start` — в `devDependencies`
+- `build:netlify` — в `scripts` (`vite build --config vite.config.netlify.ts`)
+- `netlify.toml` уже создан
 
-## 3. Добавьте в `package.json` скрипт
-```json
-"build:netlify": "vite build --config vite.config.netlify.ts"
-```
-
-## 4. На Netlify
+## 3. На Netlify
 1. **New site → Import from Git → выберите репо**.
 2. Build command и publish dir подхватятся из `netlify.toml`.
 3. В **Site settings → Environment variables** добавьте:
@@ -29,7 +23,7 @@ bun add -d @tanstack/start-adapter-netlify
    - `SUPABASE_SERVICE_ROLE_KEY` = service role key (взять в Lovable Cloud → Backend → API)
 4. **Deploy site**.
 
-## 5. Проверка
+## 4. Проверка
 После деплоя откройте `https://<your-site>.netlify.app`, отправьте RSVP — запись должна появиться в БД.
 
 ## Важно
