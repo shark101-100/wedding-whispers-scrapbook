@@ -14,7 +14,7 @@ const schema = z.object({
     .min(2, "Укажите имя")
     .max(100, "Слишком длинное имя"),
   attending: z.boolean(),
-  guests_count: z.number().int().min(1).max(10),
+  guests_count: z.number().int().min(0).max(10),
   message: z.string().trim().max(500, "Не больше 500 символов").optional(),
 });
 
