@@ -21,8 +21,7 @@ export const Route = createFileRoute("/")({
       { title: "Виктория & Егор — приглашение на свадьбу" },
       {
         name: "description",
-        content:
-          "С любовью приглашаем вас разделить с нами день нашей свадьбы — 5 июля 2026 года.",
+        content: "С любовью приглашаем вас разделить с нами день нашей свадьбы — 5 июля 2026 года.",
       },
       { property: "og:title", content: "Виктория & Егор — наша свадьба" },
       {
@@ -57,7 +56,6 @@ function Invitation() {
   return (
     <main className="min-h-screen overflow-hidden">
       <div className="mx-auto w-full max-w-md px-5 pb-24 pt-10 sm:max-w-lg sm:px-8">
-
         {/* Header sketch */}
         <header className="relative text-center">
           <p
@@ -94,7 +92,8 @@ function Invitation() {
             className="mt-6 font-hand text-xl text-ink/80 leading-snug animate-paper-in"
             style={{ animationDelay: "450ms" }}
           >
-            Зовём вас праздновать<br />
+            Зовём вас праздновать
+            <br />
             самый важный день
           </p>
         </header>
@@ -142,12 +141,10 @@ function Invitation() {
           />
           <h2 className="mt-3 font-script text-3xl text-burgundy">наша история</h2>
           <p className="mx-auto mt-4 max-w-sm font-serif-display text-[1.05rem] leading-relaxed text-ink/85">
-            Семь лет, тысяча чашек кофе, два переезда и один маленький рыжий кот спустя —
+            Семь лет, тысяча чашек кофе, два переезда и один маленький рыжий кот спустя — мы поняли,
             мы поняли, что хотим праздновать всё это вместе. Всегда.
           </p>
-          <p className="mt-4 font-hand text-xl text-forest">
-            …и хотим, чтобы вы были рядом ♡
-          </p>
+          <p className="mt-4 font-hand text-xl text-forest">…и хотим, чтобы вы были рядом ♡</p>
         </Reveal>
 
         {/* Schedule — «Тайминг» */}
@@ -160,17 +157,23 @@ function Invitation() {
             {[
               { time: "15:30", title: "сбор гостей", note: "", image: "", side: "left" as const },
               { time: "16:00", title: "церемония", note: "", image: "", side: "right" as const },
-              { time: "17:00", title: "праздничный ужин", note: "", image: "", side: "left" as const },
+              {
+                time: "17:00",
+                title: "праздничный ужин",
+                note: "",
+                image: "",
+                side: "left" as const,
+              },
               { time: "22:00", title: "торт", note: "", image: "", side: "right" as const },
-              { time: "23:00", title: "завершение вечера", note: "", image: "", side: "left" as const },
+              {
+                time: "23:00",
+                title: "завершение вечера",
+                note: "",
+                image: "",
+                side: "left" as const,
+              },
             ].map((item, i) => (
-              <Reveal
-                key={item.time}
-                as="li"
-                variant="paper"
-                delay={i * 100}
-                className="relative"
-              >
+              <Reveal key={item.time} as="li" variant="paper" delay={i * 100} className="relative">
                 <div className="relative flex items-stretch gap-3">
                   {/* Левая иллюстрация */}
                   <div className="w-20 sm:w-24 shrink-0 flex items-center justify-center">
@@ -180,7 +183,12 @@ function Invitation() {
                         style={{ transform: `rotate(${i % 2 === 0 ? "-4deg" : "-2deg"})` }}
                       >
                         {item.image ? (
-                          <img src={cake} alt="" loading="lazy" className="h-full w-full object-contain" />
+                          <img
+                            src={cake}
+                            alt=""
+                            loading="lazy"
+                            className="h-full w-full object-contain"
+                          />
                         ) : (
                           <div className="flex h-full w-full items-center justify-center border border-dashed border-burgundy/30 font-marker text-[0.6rem] uppercase tracking-wider text-burgundy/40">
                             фото
@@ -209,7 +217,12 @@ function Invitation() {
                         style={{ transform: `rotate(${i % 2 === 0 ? "4deg" : "2deg"})` }}
                       >
                         {item.image ? (
-                          <img src={eat} alt="" loading="lazy" className="h-full w-full object-contain" />
+                          <img
+                            src={eat}
+                            alt=""
+                            loading="lazy"
+                            className="h-full w-full object-contain"
+                          />
                         ) : (
                           <div className="flex h-full w-full items-center justify-center border border-dashed border-burgundy/30 font-marker text-[0.6rem] uppercase tracking-wider text-burgundy/40">
                             фото
@@ -232,7 +245,9 @@ function Invitation() {
               гостиница «Ариадна»
             </p>
             <p className="mt-2 text-center font-serif-display text-ink/80">
-              Самара, пос. Волжский,<br />Жилгородок, 45В.
+              Самара, пос. Волжский,
+              <br />
+              Жилгородок, 45В.
             </p>
             <a
               href="https://yandex.com/maps/-/CPS34Y8I"
@@ -278,8 +293,7 @@ function Invitation() {
             <div className="text-center">
               <h2 className="font-script text-3xl text-burgundy">подтвердите участие</h2>
               <p className="mt-2 font-serif-display text-ink/80">
-                ответьте, пожалуйста, до{" "}
-                <span className="font-hand text-burgundy">1 августа</span>
+                ответьте, пожалуйста, до <span className="font-hand text-burgundy">1 августа</span>
               </p>
             </div>
             <div className="mt-6">
