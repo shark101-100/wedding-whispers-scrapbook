@@ -1,8 +1,9 @@
-// Конфиг сборки специально для Netlify (SSR через @tanstack/start-adapter-netlify).
-// Используется только при локальной/Netlify-сборке: `vite build --config vite.config.netlify.ts`.
+// Конфиг сборки специально для Netlify (SSR через @netlify/vite-plugin-tanstack-start).
+// Используется только при Netlify-сборке: `vite build --config vite.config.netlify.ts`.
 // Lovable-превью продолжает использовать обычный vite.config.ts (Cloudflare).
 import { defineConfig } from "vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import { netlifyPlugin } from "@netlify/vite-plugin-tanstack-start";
 import viteReact from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import tsConfigPaths from "vite-tsconfig-paths";
@@ -12,7 +13,8 @@ export default defineConfig({
   plugins: [
     tsConfigPaths({ projects: ["./tsconfig.json"] }),
     tailwindcss(),
-    tanstackStart({ target: "netlify" }),
+    tanstackStart(),
+    netlifyPlugin(),
     viteReact(),
   ],
   resolve: {
@@ -22,7 +24,6 @@ export default defineConfig({
     dedupe: ["react", "react-dom", "@tanstack/react-router", "@tanstack/react-start"],
   },
   define: {
-    // Прокидываем VITE_* env-переменные в клиентский бандл при Netlify-сборке
     "import.meta.env.VITE_SUPABASE_URL": JSON.stringify(process.env.VITE_SUPABASE_URL ?? ""),
     "import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY": JSON.stringify(
       process.env.VITE_SUPABASE_PUBLISHABLE_KEY ?? "",
