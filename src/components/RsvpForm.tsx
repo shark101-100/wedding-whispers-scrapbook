@@ -242,7 +242,7 @@ export function RsvpForm() {
   return (
     <form onSubmit={onSubmit} className="space-y-5 text-left">
       <div>
-        <label className="font-hand text-lg text-forest block mb-1">
+        <label className="font-hand text-xl sm:text-lg text-forest block mb-1">
           ваше имя
         </label>
         <input
@@ -251,18 +251,18 @@ export function RsvpForm() {
           onChange={(e) => setName(e.target.value)}
           maxLength={100}
           // placeholder="Анна и Пётр"
-          className="w-full bg-transparent border-0 border-b-2 border-dashed border-ink/40 focus:border-burgundy focus:outline-none py-2 font-serif-display text-lg text-ink placeholder:text-ink/30 transition-colors"
+          className="w-full bg-transparent border-0 border-b-2 border-dashed border-ink/40 focus:border-burgundy focus:outline-none py-2 font-serif-display text-xl sm:text-lg text-ink placeholder:text-ink/30 transition-colors"
           required
         />
       </div>
 
       <div>
-        <p className="font-hand text-lg text-forest mb-2">придёте?</p>
+        <p className="font-hand text-xl sm:text-lg text-forest mb-2">придёте?</p>
         <div className="grid grid-cols-2 gap-3">
           <button
             type="button"
             onClick={() => setAttending(true)}
-            className={`py-3 border-2 border-dashed font-hand text-xl rounded-sm tilt-hover ${
+            className={`py-3 border-2 border-dashed font-hand text-2xl sm:text-xl rounded-sm tilt-hover ${
               attending === true
                 ? "bg-burgundy text-primary-foreground border-burgundy animate-stamp"
                 : "border-burgundy text-burgundy hover:bg-burgundy/5"
@@ -273,7 +273,7 @@ export function RsvpForm() {
           <button
             type="button"
             onClick={() => setAttending(false)}
-            className={`py-3 border-2 border-dashed font-hand text-xl rounded-sm tilt-hover-r ${
+            className={`py-3 border-2 border-dashed font-hand text-2xl sm:text-xl rounded-sm tilt-hover-r ${
               attending === false
                 ? "bg-forest text-accent-foreground border-forest animate-stamp"
                 : "border-forest text-forest hover:bg-forest/5"
@@ -286,7 +286,7 @@ export function RsvpForm() {
 
       {attending === true && (
         <div className="animate-paper-in">
-          <label className="font-hand text-lg text-forest block mb-2">
+          <label className="font-hand text-xl sm:text-lg text-forest block mb-2">
             сколько вас будет?
           </label>
           <div className="flex items-center justify-center gap-5">
@@ -317,8 +317,8 @@ export function RsvpForm() {
       )}
 
       <div>
-        <label className="font-hand text-lg text-forest block mb-1">
-          пара слов <span className="text-ink/40 text-sm">(не обязательно)</span>
+        <label className="font-hand text-xl sm:text-lg text-forest block mb-1">
+          пара слов <span className="text-ink/40 text-base sm:text-sm">(не обязательно)</span>
         </label>
         <textarea
           value={message}
@@ -326,14 +326,14 @@ export function RsvpForm() {
           maxLength={500}
           rows={3}
           placeholder="пожелания, аллергии, что угодно…"
-          className="w-full bg-transparent border-2 border-dashed border-ink/30 focus:border-burgundy focus:outline-none p-3 font-serif-display text-ink placeholder:text-ink/30 resize-none rounded-sm"
+          className="w-full bg-transparent border-2 border-dashed border-ink/30 focus:border-burgundy focus:outline-none p-3 font-serif-display text-lg sm:text-base text-ink placeholder:text-ink/30 resize-none rounded-sm"
         />
       </div>
 
       <button
         type="submit"
         disabled={loading}
-        className="wiggle-hover block w-full rounded-sm border-2 border-burgundy bg-burgundy py-3 font-hand text-xl text-primary-foreground hover:bg-burgundy/90 disabled:opacity-60 active:scale-[0.98]"
+        className="wiggle-hover block w-full rounded-sm border-2 border-burgundy bg-burgundy py-3 font-hand text-2xl sm:text-xl text-primary-foreground hover:bg-burgundy/90 disabled:opacity-60 active:scale-[0.98]"
       >
         {loading ? "отправляем…" : "отправить ответ"}
       </button>
