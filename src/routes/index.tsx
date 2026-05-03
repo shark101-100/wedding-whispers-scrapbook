@@ -5,11 +5,6 @@ import bouquet from "@/assets/bouquet.png";
 import rings from "@/assets/rings.png";
 import rose from "@/assets/rose.png";
 import heart from "@/assets/heart.png";
-import cake from "@/assets/cake.png";
-import disco from "@/assets/disco.png";
-import eat from "@/assets/eat.png";
-import rings2 from "@/assets/rings-2.png";
-import glasses2 from "@/assets/glasses-2.png";
 import { RsvpForm } from "@/components/RsvpForm";
 import { Toaster } from "@/components/ui/sonner";
 import { Reveal } from "@/components/Reveal";
@@ -155,21 +150,39 @@ function Invitation() {
 
           <ul className="mt-10 space-y-14">
             {[
-              { time: "15:30", title: "сбор гостей", note: "", image: "", side: "left" as const },
-              { time: "16:00", title: "церемония", note: "", image: "", side: "right" as const },
+              {
+                time: "15:30",
+                title: "сбор гостей",
+                note: "",
+                image: "/images/glasses-2.png",
+                side: "left" as const,
+              },
+              {
+                time: "16:00",
+                title: "церемония",
+                note: "",
+                image: "images/rings-2.png",
+                side: "right" as const,
+              },
               {
                 time: "17:00",
                 title: "праздничный ужин",
                 note: "",
-                image: "",
+                image: "/images/eat.png",
                 side: "left" as const,
               },
-              { time: "22:00", title: "торт", note: "", image: "", side: "right" as const },
+              {
+                time: "22:00",
+                title: "торт",
+                note: "",
+                image: "/images/cake.png",
+                side: "right" as const,
+              },
               {
                 time: "23:00",
                 title: "завершение вечера",
                 note: "",
-                image: "",
+                image: "/images/disco.png",
                 side: "left" as const,
               },
             ].map((item, i) => (
@@ -184,9 +197,10 @@ function Invitation() {
                       >
                         {item.image ? (
                           <img
-                            src={cake}
-                            alt=""
+                            src={item.image}
+                            alt={item.title}
                             loading="lazy"
+                            decoding="async"
                             className="h-full w-full object-contain"
                           />
                         ) : (
@@ -218,9 +232,10 @@ function Invitation() {
                       >
                         {item.image ? (
                           <img
-                            src={eat}
-                            alt=""
+                            src={item.image}
+                            alt={item.title}
                             loading="lazy"
+                            decoding="async"
                             className="h-full w-full object-contain"
                           />
                         ) : (
@@ -271,10 +286,11 @@ function Invitation() {
             className="mx-auto w-28 opacity-85 deco-rotate-left animate-float-slow"
           />
           <h2 className="mt-3 font-script text-3xl text-burgundy">дресс-код</h2>
-          <p className="mt-3 font-hand text-xl text-forest">бордо · олива · бежевый</p>
           <p className="mx-auto mt-3 max-w-xs font-serif-display italic text-ink/75">
-            никакой строгости — только уют, мягкие ткани и улыбки
+            мы за ваш комфорт, поэтому можете выбрать лобой наряд! но если ваша душа просит
+            эстетики, присмотритесь к этим цветам они идеально впишутся в наш праздник
           </p>
+          <p className="mt-3 font-hand text-xl text-forest">бордо · олива · бежевый</p>
 
           <div className="mt-6 flex items-center justify-center gap-3">
             {["#6b2535", "#4a5d3a", "#c9b48a"].map((c, i) => (
@@ -293,7 +309,7 @@ function Invitation() {
             <div className="text-center">
               <h2 className="font-script text-3xl text-burgundy">подтвердите участие</h2>
               <p className="mt-2 font-serif-display text-ink/80">
-                ответьте, пожалуйста, до <span className="font-hand text-burgundy">1 августа</span>
+                ответьте, пожалуйста, до <span className="font-hand text-burgundy">1 июля</span>
               </p>
             </div>
             <div className="mt-6">
@@ -313,9 +329,9 @@ function Invitation() {
             className="mx-auto w-14 opacity-70 -rotate-12 animate-float"
           />
           <p className="mt-2 font-script text-2xl text-burgundy">до встречи</p>
-          <p className="font-hand text-xl text-forest">А. & М.</p>
+          <p className="font-hand text-xl text-forest">В. & Е.</p>
           <p className="mt-6 font-marker text-xs uppercase tracking-[0.3em] text-ink/50">
-            14 · 09 · 2026
+            05 · 07 · 2026
           </p>
         </Reveal>
       </div>

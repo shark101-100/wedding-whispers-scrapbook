@@ -119,7 +119,7 @@ export function RsvpForm() {
               className="w-7 mt-1 opacity-80"
             />
             <span className="font-marker text-[0.55rem] tracking-widest text-burgundy/80 leading-none mt-1">
-              А·М
+              В·Е
             </span>
           </div>
 
@@ -169,7 +169,7 @@ export function RsvpForm() {
               style={{ transform: "rotate(0.8deg)", animationDelay: "550ms" }}
             >
               <p className="font-marker text-[0.65rem] uppercase tracking-[0.25em] text-forest/70 text-center">
-                ваш билет в наш день
+                ваш билет
               </p>
               <div className="mt-2 flex items-center justify-around text-center">
                 <div>
@@ -186,7 +186,7 @@ export function RsvpForm() {
                     дата
                   </p>
                   <p className="font-script text-2xl text-burgundy leading-none mt-0.5">
-                    14·09
+                    05·07
                   </p>
                 </div>
                 <span className="h-8 w-px border-l border-dashed border-forest/40" />
@@ -195,7 +195,7 @@ export function RsvpForm() {
                     в
                   </p>
                   <p className="font-script text-2xl text-burgundy leading-none mt-0.5">
-                    16:00
+                    15:30
                   </p>
                 </div>
               </div>
@@ -211,7 +211,7 @@ export function RsvpForm() {
               до встречи
             </p>
             <p className="mt-1 font-hand text-lg text-forest">
-              А. & М. ♡
+              В. & Е. ♡
             </p>
           </div>
         </div>
@@ -250,7 +250,7 @@ export function RsvpForm() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           maxLength={100}
-          placeholder="Анна и Пётр"
+          // placeholder="Анна и Пётр"
           className="w-full bg-transparent border-0 border-b-2 border-dashed border-ink/40 focus:border-burgundy focus:outline-none py-2 font-serif-display text-lg text-ink placeholder:text-ink/30 transition-colors"
           required
         />
