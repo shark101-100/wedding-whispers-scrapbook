@@ -267,25 +267,55 @@ function Invitation() {
           </PolaroidNote>
         </Reveal>
 
-        {/* Dress code */}
-        <Reveal as="section" className="relative mt-20 text-center" variant="paper">
-          <h2 className="font-script text-4xl sm:text-3xl text-burgundy">дресс-код</h2>
-          <p className="mx-auto mt-3 max-w-xs font-serif-display italic text-lg sm:text-base text-ink/75">
-            мы за ваш комфорт, поэтому можете выбрать лобой наряд! но если ваша душа просит
-            эстетики, присмотритесь к этим цветам они идеально впишутся в наш праздник
-          </p>
-          <p className="mt-3 font-hand text-2xl sm:text-xl text-forest">бордо · олива · бежевый</p>
+        {/* Организационные моменты */}
+        <section className="relative mt-20">
+          <Reveal variant="paper">
+            <h2 className="text-center font-script text-5xl sm:text-4xl text-burgundy">
+              организационные моменты
+            </h2>
+            <p className="mx-auto mt-5 max-w-sm text-center font-serif-display text-[1.18rem] sm:text-[1.05rem] leading-relaxed text-ink/85">
+              Чтобы создать по-настоящему расслабленную и праздничную атмосферу для всех гостей,
+              мы решили провести наш вечер в формате только для взрослых.
+            </p>
+          </Reveal>
 
-          <div className="mt-6 flex items-center justify-center gap-3">
-            {["#6b2535", "#4a5d3a", "#c9b48a"].map((c, i) => (
-              <span
-                key={c}
-                className="h-9 w-9 rounded-full border border-border/60 shadow-inner animate-pop"
-                style={{ backgroundColor: c, animationDelay: `${i * 120}ms` }}
-              />
-            ))}
+          <div className="mt-12 space-y-14">
+            <Reveal variant="paper" delay={100}>
+              <PolaroidNote rotate="-1.5deg">
+                <p className="text-center font-hand text-2xl sm:text-xl text-forest">трансфер</p>
+                <p className="mt-3 text-center font-serif-display text-lg sm:text-base text-ink/80 leading-relaxed">
+                  Наша площадка находится недалеко от города, куда легко добраться на такси,
+                  автобусе или личном авто. Мы решили не привязывать вас к общему расписанию,
+                  чтобы вы могли приехать в удобное для вас время.
+                </p>
+              </PolaroidNote>
+            </Reveal>
+
+            <Reveal variant="paper" delay={200}>
+              <PolaroidNote rotate="1.8deg">
+                <p className="text-center font-hand text-2xl sm:text-xl text-forest">дресс-код</p>
+                <p className="mt-3 text-center font-serif-display text-lg sm:text-base text-ink/80 leading-relaxed">
+                  Мы за ваш комфорт, поэтому можете выбрать любой наряд! Но если ваша душа
+                  просит эстетики, присмотритесь к этим цветам — они идеально впишутся в наш
+                  праздник.
+                </p>
+                <p className="mt-4 text-center font-hand text-2xl sm:text-xl text-forest">
+                  бордо · олива · бежевый
+                </p>
+                <div className="mt-4 flex items-center justify-center gap-3">
+                  {["#6b2535", "#4a5d3a", "#c9b48a"].map((c, i) => (
+                    <span
+                      key={c}
+                      className="h-9 w-9 rounded-full border border-border/60 shadow-inner animate-pop"
+                      style={{ backgroundColor: c, animationDelay: `${i * 120}ms` }}
+                    />
+                  ))}
+                </div>
+              </PolaroidNote>
+            </Reveal>
           </div>
-        </Reveal>
+        </section>
+
 
         {/* RSVP */}
         <Reveal as="section" className="relative mt-20" variant="paper">
