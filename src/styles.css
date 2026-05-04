@@ -79,15 +79,15 @@
 
   /* Wedding scrapbook palette — warm muted tones */
   --background: oklch(0.985 0.012 90);          /* ivory */
-  --foreground: oklch(0.36 0.05 105);           /* dark olive */
+  --foreground: oklch(0.32 0.04 40);            /* soft dark ink brown */
   --paper: oklch(0.955 0.022 80);
   --paper-deep: oklch(0.92 0.028 75);
-  --ink: oklch(0.36 0.05 105);
+  --ink: oklch(0.28 0.03 40);
 
-  --burgundy: oklch(0.36 0.05 105);             /* dark olive (was bordeaux) */
-  --burgundy-soft: oklch(0.46 0.06 105);
-  --forest: oklch(0.49 0.07 115);               /* accent olive #6b7340 */
-  --forest-soft: oklch(0.58 0.07 115);
+  --burgundy: oklch(0.42 0.13 20);              /* muted bordeaux */
+  --burgundy-soft: oklch(0.55 0.11 22);
+  --forest: oklch(0.38 0.06 145);               /* dark muted green */
+  --forest-soft: oklch(0.5 0.07 145);
   --beige: oklch(0.86 0.04 75);
   --beige-deep: oklch(0.78 0.06 70);
 
@@ -104,14 +104,14 @@
   --secondary: var(--beige);
   --secondary-foreground: var(--ink);
   --muted: var(--beige);
-  --muted-foreground: oklch(0.5 0.03 100);
+  --muted-foreground: oklch(0.45 0.04 50);
   --accent: var(--forest);
   --accent-foreground: oklch(0.97 0.02 80);
   --destructive: var(--burgundy);
   --destructive-foreground: oklch(0.97 0.02 80);
-  --border: oklch(0.78 0.02 100);
-  --input: oklch(0.78 0.02 100);
-  --ring: var(--forest);
+  --border: oklch(0.82 0.04 70);
+  --input: oklch(0.82 0.04 70);
+  --ring: var(--burgundy-soft);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -187,7 +187,7 @@
   .font-serif-display { font-family: var(--font-serif); font-weight: 500; }
 
   .ink-line {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'><path d='M2 6 Q 50 1, 100 5 T 198 6' stroke='%236b7340' stroke-width='1.4' fill='none' stroke-linecap='round' opacity='0.7'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'><path d='M2 6 Q 50 1, 100 5 T 198 6' stroke='%236b2535' stroke-width='1.4' fill='none' stroke-linecap='round' opacity='0.7'/></svg>");
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }

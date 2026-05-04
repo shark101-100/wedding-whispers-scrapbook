@@ -290,10 +290,10 @@ function Invitation() {
             мы за ваш комфорт, поэтому можете выбрать лобой наряд! но если ваша душа просит
             эстетики, присмотритесь к этим цветам они идеально впишутся в наш праздник
           </p>
-          <p className="mt-3 font-hand text-2xl sm:text-xl text-forest">тёмная олива · олива · бежевый</p>
+          <p className="mt-3 font-hand text-2xl sm:text-xl text-forest">бордо · олива · бежевый</p>
 
           <div className="mt-6 flex items-center justify-center gap-3">
-            {["#4a4a2a", "#6b7340", "#c9b48a"].map((c, i) => (
+            {["#6b2535", "#4a5d3a", "#c9b48a"].map((c, i) => (
               <span
                 key={c}
                 className="h-9 w-9 rounded-full border border-border/60 shadow-inner animate-pop"
