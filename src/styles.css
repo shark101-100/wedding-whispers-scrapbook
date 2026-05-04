@@ -95,7 +95,7 @@
   --font-hand: 'Shantell Sans', ui-rounded, system-ui, sans-serif;
   --font-marker: 'Shantell Sans', ui-rounded, system-ui, sans-serif;
   --font-serif: 'Shantell Sans', ui-rounded, system-ui, sans-serif;
-  --card: oklch(0.97 0.02 80);
+  --card: oklch(0.99 0.005 85);
   --card-foreground: var(--ink);
   --popover: oklch(0.97 0.02 80);
   --popover-foreground: var(--ink);
