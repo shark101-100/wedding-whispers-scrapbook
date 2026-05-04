@@ -78,10 +78,10 @@
   --radius: 0.625rem;
 
   /* Wedding scrapbook palette — warm muted tones */
-  --background: oklch(0.985 0.012 90);          /* ivory */
+  --background: oklch(0.995 0.004 90);          /* near white */
   --foreground: oklch(0.32 0.04 40);            /* soft dark ink brown */
-  --paper: oklch(0.955 0.022 80);
-  --paper-deep: oklch(0.92 0.028 75);
+  --paper: oklch(0.99 0.006 85);
+  --paper-deep: oklch(0.97 0.01 80);
   --ink: oklch(0.28 0.03 40);
 
   --burgundy: oklch(0.42 0.13 20);              /* muted bordeaux */
