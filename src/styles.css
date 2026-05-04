@@ -91,9 +91,9 @@
   --beige: oklch(0.86 0.04 75);
   --beige-deep: oklch(0.78 0.06 70);
 
-  --font-script: 'Cormorant Garamond', ui-serif, Georgia, serif;
-  --font-hand: 'Lora', ui-serif, Georgia, serif;
-  --font-marker: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-script: 'Climate Crisis', ui-serif, Georgia, serif;
+  --font-hand: 'Playpen Sans', ui-rounded, system-ui, sans-serif;
+  --font-marker: 'Playpen Sans', system-ui, -apple-system, sans-serif;
   --font-serif: 'Inter', system-ui, -apple-system, sans-serif;
   --card: oklch(0.97 0.02 80);
   --card-foreground: var(--ink);
@@ -181,9 +181,9 @@
 }
 
 @layer utilities {
-  .font-script { font-family: var(--font-script); font-weight: 500; letter-spacing: 0.01em; }
-  .font-hand { font-family: var(--font-hand); font-weight: 500; font-style: italic; letter-spacing: 0; }
-  .font-marker { font-family: var(--font-marker); font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; }
+  .font-script { font-family: var(--font-script); font-weight: 400; letter-spacing: 0.01em; }
+  .font-hand { font-family: var(--font-hand); font-weight: 500; letter-spacing: 0; }
+  .font-marker { font-family: var(--font-marker); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
   .font-serif-display { font-family: var(--font-serif); font-weight: 400; }
 
   .ink-line {
