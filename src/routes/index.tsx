@@ -81,12 +81,14 @@ function Invitation() {
           </div>
 
           <div
-            className="mt-6 font-hand text-2xl sm:text-xl text-ink/80 leading-snug animate-paper-in space-y-3"
+            className="mt-6 font-hand text-lg sm:text-xl font-serif-display text-ink/80 leading-snug animate-paper-in space-y-3"
             style={{ animationDelay: "450ms" }}
           >
             <p>
-              Дорогие родные и друзья! Один день в этом году станет для нас особенно важным, и мы хотим провести его в
-              кругу близких! С большим удовольствием приглашаем вас на нашу свадьбу, которая состоится:
+              Дорогие родные и друзья! <br /> 
+              Один день в этом году станет для нас особенно важным, и мы хотим провести его в
+              кругу близких! <br /> 
+              С большим удовольствием приглашаем вас на нашу свадьбу, которая состоится:
             </p>
           </div>
         </header>
@@ -123,14 +125,14 @@ function Invitation() {
         </Reveal>
 
         {/* Story */}
-        <Reveal as="section" className="relative mt-20 text-center" variant="paper">
+        {/* <Reveal as="section" className="relative mt-20 text-center" variant="paper">
           <h2 className="font-script text-4xl sm:text-3xl text-burgundy">наша история</h2>
           <p className="mx-auto mt-4 max-w-sm font-serif-display text-[1.18rem] sm:text-[1.05rem] leading-relaxed text-ink/85">
             Семь лет, тысяча чашек кофе, два переезда и один маленький рыжий кот спустя — мы поняли, мы поняли, что
             хотим праздновать всё это вместе. Всегда.
           </p>
           <p className="mt-4 font-hand text-2xl sm:text-xl text-forest">…и хотим, чтобы вы были рядом ♡</p>
-        </Reveal>
+        </Reveal> */}
 
         {/* Schedule — «Тайминг» */}
         <section className="relative mt-20">
