@@ -179,65 +179,43 @@ function Invitation() {
               },
             ].map((item, i) => (
               <Reveal key={item.time} as="li" variant="paper" delay={i * 100} className="relative">
-                <div className="relative flex items-stretch gap-6 sm:gap-8">
-                  {/* Левая иллюстрация */}
-                  <div className="w-28 sm:w-32 shrink-0 flex items-center justify-center">
-                    {item.side === "left" && (
-                      <div
-                        className="relative h-28 w-28 sm:h-32 sm:w-32 overflow-hidden"
-                        style={{ transform: `rotate(${i % 2 === 0 ? "-4deg" : "-2deg"})` }}
-                      >
-                        {item.image ? (
-                          <img
-                            src={item.image}
-                            alt={item.title}
-                            loading="lazy"
-                            decoding="async"
-                            className="h-full w-full object-contain"
-                          />
-                        ) : (
-                          <div className="flex h-full w-full items-center justify-center border border-dashed border-burgundy/30 font-marker text-[0.6rem] uppercase tracking-wider text-burgundy/40">
-                            фото
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
-
+                <div className="relative">
                   {/* Центральный блок: подпись · время · описание */}
-                  <div className="flex-1 text-center">
+                  <div className="text-center px-28 sm:px-32">
                     <p className="font-hand text-lg sm:text-base text-forest">{item.title}</p>
                     <p className="font-script text-5xl sm:text-6xl text-burgundy leading-none mt-2">
                       {item.time}
                     </p>
-                    <p className="mt-2 font-serif-display text-sm text-ink/75 italic">
-                      {item.note}
-                    </p>
-                  </div>
-
-                  {/* Правая иллюстрация */}
-                  <div className="w-28 sm:w-32 shrink-0 flex items-center justify-center">
-                    {item.side === "right" && (
-                      <div
-                        className="relative h-28 w-28 sm:h-32 sm:w-32 overflow-hidden"
-                        style={{ transform: `rotate(${i % 2 === 0 ? "4deg" : "2deg"})` }}
-                      >
-                        {item.image ? (
-                          <img
-                            src={item.image}
-                            alt={item.title}
-                            loading="lazy"
-                            decoding="async"
-                            className="h-full w-full object-contain"
-                          />
-                        ) : (
-                          <div className="flex h-full w-full items-center justify-center border border-dashed border-burgundy/30 font-marker text-[0.6rem] uppercase tracking-wider text-burgundy/40">
-                            фото
-                          </div>
-                        )}
-                      </div>
+                    {item.note && (
+                      <p className="mt-2 font-serif-display text-sm text-ink/75 italic">
+                        {item.note}
+                      </p>
                     )}
                   </div>
+
+                  {/* Иллюстрация — абсолютно позиционирована, не влияет на центровку */}
+                  {item.image && (
+                    <div
+                      className={`absolute top-1/2 -translate-y-1/2 ${
+                        item.side === "left" ? "left-0" : "right-0"
+                      } h-28 w-28 sm:h-32 sm:w-32 overflow-hidden`}
+                      style={{
+                        transform: `translateY(-50%) rotate(${
+                          item.side === "left"
+                            ? i % 2 === 0 ? "-4deg" : "-2deg"
+                            : i % 2 === 0 ? "4deg" : "2deg"
+                        })`,
+                      }}
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
+                  )}
                 </div>
               </Reveal>
             ))}
