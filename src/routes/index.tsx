@@ -83,14 +83,19 @@ function Invitation() {
             />
           </div>
 
-          <p
-            className="mt-6 font-hand text-2xl sm:text-xl text-ink/80 leading-snug animate-paper-in"
+          <div
+            className="mt-6 font-hand text-2xl sm:text-xl text-ink/80 leading-snug animate-paper-in space-y-3"
             style={{ animationDelay: "450ms" }}
           >
-            Зовём вас праздновать
-            <br />
-            самый важный день
-          </p>
+            <p>Дорогие родные и друзья!</p>
+            <p>
+              Один день в этом году станет для нас особенно важным, и мы хотим провести его в
+              кругу близких!
+            </p>
+            <p>
+              С большим удовольствием приглашаем вас на нашу свадьбу, которая состоится:
+            </p>
+          </div>
         </header>
 
         {/* Date card */}
