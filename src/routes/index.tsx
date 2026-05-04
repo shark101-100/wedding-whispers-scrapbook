@@ -77,23 +77,16 @@ function Invitation() {
               <span className="block font-hand text-4xl sm:text-3xl text-forest -my-1">&</span>
               Егор
             </h1>
-            <div
-              className="mx-auto mt-3 h-3 w-40 ink-line animate-ink-draw"
-              style={{ animationDelay: "650ms" }}
-            />
+            <div className="mx-auto mt-3 h-3 w-40 ink-line animate-ink-draw" style={{ animationDelay: "650ms" }} />
           </div>
 
           <div
             className="mt-6 font-hand text-2xl sm:text-xl text-ink/80 leading-snug animate-paper-in space-y-3"
             style={{ animationDelay: "450ms" }}
           >
-            <p>Дорогие родные и друзья!</p>
             <p>
-              Один день в этом году станет для нас особенно важным, и мы хотим провести его в
-              кругу близких!
-            </p>
-            <p>
-              С большим удовольствием приглашаем вас на нашу свадьбу, которая состоится:
+              Дорогие родные и друзья! Один день в этом году станет для нас особенно важным, и мы хотим провести его в
+              кругу близких! С большим удовольствием приглашаем вас на нашу свадьбу, которая состоится:
             </p>
           </div>
         </header>
@@ -133,8 +126,8 @@ function Invitation() {
         <Reveal as="section" className="relative mt-20 text-center" variant="paper">
           <h2 className="font-script text-4xl sm:text-3xl text-burgundy">наша история</h2>
           <p className="mx-auto mt-4 max-w-sm font-serif-display text-[1.18rem] sm:text-[1.05rem] leading-relaxed text-ink/85">
-            Семь лет, тысяча чашек кофе, два переезда и один маленький рыжий кот спустя — мы поняли,
-            мы поняли, что хотим праздновать всё это вместе. Всегда.
+            Семь лет, тысяча чашек кофе, два переезда и один маленький рыжий кот спустя — мы поняли, мы поняли, что
+            хотим праздновать всё это вместе. Всегда.
           </p>
           <p className="mt-4 font-hand text-2xl sm:text-xl text-forest">…и хотим, чтобы вы были рядом ♡</p>
         </Reveal>
@@ -212,12 +205,8 @@ function Invitation() {
                   {/* Центральный блок: подпись · время · описание */}
                   <div className="flex-1 text-center">
                     <p className="font-hand text-lg sm:text-base text-forest">{item.title}</p>
-                    <p className="font-script text-5xl sm:text-6xl text-burgundy leading-none mt-2">
-                      {item.time}
-                    </p>
-                    <p className="mt-2 font-serif-display text-sm text-ink/75 italic">
-                      {item.note}
-                    </p>
+                    <p className="font-script text-5xl sm:text-6xl text-burgundy leading-none mt-2">{item.time}</p>
+                    <p className="mt-2 font-serif-display text-sm text-ink/75 italic">{item.note}</p>
                   </div>
 
                   {/* Правая иллюстрация */}
@@ -253,9 +242,7 @@ function Invitation() {
         <Reveal as="section" className="relative mt-16" variant="paper">
           <PolaroidNote rotate="1.8deg">
             <p className="text-center font-hand text-2xl sm:text-xl text-forest">место встречи</p>
-            <p className="mt-3 text-center font-script text-3xl sm:text-2xl text-burgundy">
-              гостиница «Ариадна»
-            </p>
+            <p className="mt-3 text-center font-script text-3xl sm:text-2xl text-burgundy">гостиница «Ариадна»</p>
             <p className="mt-2 text-center font-serif-display text-lg sm:text-base text-ink/80">
               Самара, пос. Волжский,
               <br />
@@ -275,12 +262,10 @@ function Invitation() {
         {/* Организационные моменты */}
         <section className="relative mt-20">
           <Reveal variant="paper">
-            <h2 className="text-center font-script text-5xl sm:text-4xl text-burgundy">
-              организационные моменты
-            </h2>
+            <h2 className="text-center font-script text-5xl sm:text-4xl text-burgundy">организационные моменты</h2>
             <p className="mx-auto mt-5 max-w-sm text-center font-serif-display text-[1.18rem] sm:text-[1.05rem] leading-relaxed text-ink/85">
-              Чтобы создать по-настоящему расслабленную и праздничную атмосферу для всех гостей,
-              мы решили провести наш вечер в формате только для взрослых.
+              Чтобы создать по-настоящему расслабленную и праздничную атмосферу для всех гостей, мы решили провести наш
+              вечер в формате только для взрослых.
             </p>
           </Reveal>
 
@@ -288,22 +273,18 @@ function Invitation() {
             <Reveal variant="paper" delay={100} className="text-center">
               <p className="font-script text-3xl sm:text-2xl text-forest">трансфер</p>
               <p className="mx-auto mt-3 max-w-sm font-serif-display text-[1.18rem] sm:text-[1.05rem] leading-relaxed text-ink/85">
-                Наша площадка находится недалеко от города, куда легко добраться на такси,
-                автобусе или личном авто. Мы решили не привязывать вас к общему расписанию,
-                чтобы вы могли приехать в удобное для вас время.
+                Наша площадка находится недалеко от города, куда легко добраться на такси, автобусе или личном авто. Мы
+                решили не привязывать вас к общему расписанию, чтобы вы могли приехать в удобное для вас время.
               </p>
             </Reveal>
 
             <Reveal variant="paper" delay={200} className="text-center">
               <p className="font-script text-3xl sm:text-2xl text-forest">дресс-код</p>
               <p className="mx-auto mt-3 max-w-sm font-serif-display text-[1.18rem] sm:text-[1.05rem] leading-relaxed text-ink/85">
-                Мы за ваш комфорт, поэтому можете выбрать любой наряд! Но если ваша душа
-                просит эстетики, присмотритесь к этим цветам — они идеально впишутся в наш
-                праздник.
+                Мы за ваш комфорт, поэтому можете выбрать любой наряд! Но если ваша душа просит эстетики, присмотритесь
+                к этим цветам — они идеально впишутся в наш праздник.
               </p>
-              <p className="mt-4 font-hand text-2xl sm:text-xl text-forest">
-                бордо · олива · бежевый
-              </p>
+              <p className="mt-4 font-hand text-2xl sm:text-xl text-forest">бордо · олива · бежевый</p>
               <div className="mt-4 flex items-center justify-center gap-3">
                 {["#6b2535", "#4a5d3a", "#c9b48a"].map((c, i) => (
                   <span
@@ -316,7 +297,6 @@ function Invitation() {
             </Reveal>
           </div>
         </section>
-
 
         {/* RSVP */}
         <Reveal as="section" className="relative mt-20" variant="paper">
@@ -345,9 +325,7 @@ function Invitation() {
           />
           <p className="mt-2 font-script text-3xl sm:text-2xl text-burgundy">до встречи</p>
           <p className="font-hand text-2xl sm:text-xl text-forest">В. & Е.</p>
-          <p className="mt-6 font-marker text-xs uppercase tracking-[0.3em] text-ink/50">
-            05 · 07 · 2026
-          </p>
+          <p className="mt-6 font-marker text-xs uppercase tracking-[0.3em] text-ink/50">05 · 07 · 2026</p>
         </Reveal>
       </div>
       <Toaster position="top-center" />
