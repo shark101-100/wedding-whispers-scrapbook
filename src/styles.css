@@ -79,15 +79,15 @@
 
   /* Wedding scrapbook palette — warm muted tones */
   --background: oklch(0.985 0.012 90);          /* ivory */
-  --foreground: oklch(0.32 0.04 40);            /* soft dark ink brown */
+  --foreground: oklch(0.36 0.05 105);           /* dark olive */
   --paper: oklch(0.955 0.022 80);
   --paper-deep: oklch(0.92 0.028 75);
-  --ink: oklch(0.28 0.03 40);
+  --ink: oklch(0.36 0.05 105);
 
-  --burgundy: oklch(0.42 0.13 20);              /* muted bordeaux */
-  --burgundy-soft: oklch(0.55 0.11 22);
-  --forest: oklch(0.38 0.06 145);               /* dark muted green */
-  --forest-soft: oklch(0.5 0.07 145);
+  --burgundy: oklch(0.36 0.05 105);             /* dark olive (was bordeaux) */
+  --burgundy-soft: oklch(0.46 0.06 105);
+  --forest: oklch(0.49 0.07 115);               /* accent olive #6b7340 */
+  --forest-soft: oklch(0.58 0.07 115);
   --beige: oklch(0.86 0.04 75);
   --beige-deep: oklch(0.78 0.06 70);
 
