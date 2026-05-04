@@ -1,41 +1,54 @@
-## Увеличение размеров текста для мобильных
+## Цель
 
-Цель: повысить читаемость на мобильных. На десктопе (`sm:`) оставить текущие размеры через `sm:`-overrides, чтобы не ломать вёрстку.
+Уйти от рукописных шрифтов (Marck Script, Caveat) — они плохо читаются, особенно на мобильных и в длинных русских текстах. Заменить на элегантные печатные шрифты с хорошей кириллицей, сохранив тёплый «свадебно-винтажный» характер.
 
-### Изменения в `src/routes/index.tsx`
+## Новые шрифты (Google Fonts)
 
-| Элемент | Было | Стало (mobile → sm:) |
+- **Cormorant Garamond** (400, 500, 600, italic) — элегантный сериф для имён, заголовков и крупных акцентов. Заменяет `Marck Script`.
+- **Lora** (400, 500, 600, italic) — мягкий читаемый сериф для подписей и коротких акцентов. Заменяет `Caveat`.
+- **Inter** (400, 500) — чистый sans для основного текста, абзацев истории, адресов, форм.
+
+Все три отлично поддерживают кириллицу.
+
+## Изменения в `src/routes/__root.tsx`
+
+Заменить ссылку на Google Fonts:
+
+```
+https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500&display=swap
+```
+
+## Изменения в `src/styles.css`
+
+В `:root`:
+- `--font-script: 'Cormorant Garamond', ui-serif, Georgia, serif;` (было Marck Script)
+- `--font-hand: 'Lora', ui-serif, Georgia, serif;` (было Caveat)
+- `--font-marker: 'Inter', system-ui, sans-serif;` — uppercase акценты (мелкие подписи)
+- `--font-serif: 'Inter', system-ui, sans-serif;` — основной текст
+
+В `@layer utilities`:
+- `.font-script` — `font-weight: 500; letter-spacing: 0.01em;` (элегантный сериф)
+- `.font-hand` — `font-weight: 500; font-style: italic;` (мягкий курсив для акцентов)
+- `.font-marker` — `font-weight: 500; letter-spacing: 0.18em;` (uppercase подписи)
+- `.font-serif-display` — `font-family: var(--font-serif); font-weight: 400;`
+
+## Что меняется визуально
+
+| Класс | Было | Стало |
 |---|---|---|
-| Заголовок «— с радостью приглашаем —» | `text-2xl` | `text-3xl sm:text-2xl` |
-| Имена «Виктория & Егор» | `text-[2.6rem]` | `text-[3.2rem] sm:text-[2.6rem]` |
-| «&» между именами | `text-3xl` | `text-4xl sm:text-3xl` |
-| «Зовём вас праздновать…» | `text-xl` | `text-2xl sm:text-xl` |
-| «сохраните дату» | `text-lg` | `text-xl sm:text-lg` |
-| Дата дни «вс / в» | `text-sm` | `text-base sm:text-sm` |
-| Дата числа «5 / 15:30» | `text-3xl` | `text-4xl sm:text-3xl` |
-| «июля» | `text-2xl` | `text-3xl sm:text-2xl` |
-| «2026» | `text-xl` | `text-2xl sm:text-xl` |
-| «наша история» | `text-3xl` | `text-4xl sm:text-3xl` |
-| Текст истории | `text-[1.05rem]` | `text-[1.18rem] sm:text-[1.05rem]` |
-| «…и хотим, чтобы вы были рядом ♡» | `text-xl` | `text-2xl sm:text-xl` |
-| «Тайминг» | `text-4xl` | `text-5xl sm:text-4xl` |
-| Тайминг подписи (title) | `text-base` | `text-lg sm:text-base` |
-| Тайминг note | `text-xs sm:text-sm` | `text-sm sm:text-sm` |
-| «место встречи» | `text-xl` | `text-2xl sm:text-xl` |
-| «гостиница Ариадна» | `text-2xl` | `text-3xl sm:text-2xl` |
-| Адрес | (default) | `text-lg sm:text-base` |
-| «открыть на карте →» | `text-lg` | `text-xl sm:text-lg` |
-| «дресс-код» | `text-3xl` | `text-4xl sm:text-3xl` |
-| Описание дресс-кода | (default) | `text-lg sm:text-base` |
-| «бордо · олива · бежевый» | `text-xl` | `text-2xl sm:text-xl` |
-| «подтвердите участие» | `text-3xl` | `text-4xl sm:text-3xl` |
-| «ответьте, пожалуйста…» | (default) | `text-lg sm:text-base` |
-| Footer «до встречи» | `text-2xl` | `text-3xl sm:text-2xl` |
-| Footer «В. & Е.» | `text-xl` | `text-2xl sm:text-xl` |
+| `font-script` (имена, крупные цифры, заголовки) | рукописный Marck Script | элегантный сериф Cormorant Garamond |
+| `font-hand` («&», подписи, акценты) | рукописный Caveat | курсивный Lora italic |
+| `font-marker` (мелкие uppercase подписи) | Caveat | Inter uppercase |
+| `font-serif-display` (абзацы) | системный сериф | Inter sans |
 
-Размеры тайминга `text-5xl` для времени остаются — они уже крупные.
+## В `src/routes/index.tsx`
 
-### Также — `src/components/RsvpForm.tsx`
-Просмотреть и пропорционально увеличить размеры подписей/инпутов для мобильных (label/input → `text-base sm:text-sm` и т.п.).
+Структуру не трогаем — все классы (`font-script`, `font-hand`, `font-marker`, `font-serif-display`) остаются, меняется только то, какие шрифты под ними. Это даёт согласованную замену в одной точке.
 
-После внесения изменений — визуальная проверка на мобильном вьюпорте (375px).
+## В `src/components/RsvpForm.tsx`
+
+Проверить — формы будут автоматически использовать новый Inter (через `font-serif`). Дополнительных правок, скорее всего, не нужно.
+
+## Результат
+
+Сайт сохранит «винтажно-свадебный» характер за счёт изящного серифа Cormorant в именах и заголовках, но весь информационный текст станет в разы читаемее. Курсивный Lora добавит мягкости в местах, где раньше был рукописный Caveat — без потери теплоты.
