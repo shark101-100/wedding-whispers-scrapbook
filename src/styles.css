@@ -91,10 +91,10 @@
   --beige: oklch(0.86 0.04 75);
   --beige-deep: oklch(0.78 0.06 70);
 
-  --font-script: 'Playpen Sans', ui-rounded, system-ui, sans-serif;
-  --font-hand: 'Shantell Sans', ui-rounded, system-ui, sans-serif;
-  --font-marker: 'Shantell Sans', ui-rounded, system-ui, sans-serif;
-  --font-serif: 'Shantell Sans', ui-rounded, system-ui, sans-serif;
+  --font-script: 'Marck Script', ui-serif, Georgia, serif;
+  --font-hand: 'Caveat', ui-rounded, system-ui, sans-serif;
+  --font-marker: 'Caveat', ui-rounded, system-ui, sans-serif;
+  --font-serif: 'Caveat', ui-rounded, system-ui, sans-serif;
   --card: oklch(0.97 0.02 80);
   --card-foreground: var(--ink);
   --popover: oklch(0.97 0.02 80);
