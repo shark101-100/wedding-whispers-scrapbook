@@ -126,15 +126,7 @@ function Invitation() {
 
         {/* Story */}
         <Reveal as="section" className="relative mt-20 text-center" variant="paper">
-          <img
-            src={rose}
-            alt=""
-            width={512}
-            height={640}
-            loading="lazy"
-            className="mx-auto w-24 opacity-80 deco-rotate-right animate-float-slow"
-          />
-          <h2 className="mt-3 font-script text-4xl sm:text-3xl text-burgundy">наша история</h2>
+          <h2 className="font-script text-4xl sm:text-3xl text-burgundy">наша история</h2>
           <p className="mx-auto mt-4 max-w-sm font-serif-display text-[1.18rem] sm:text-[1.05rem] leading-relaxed text-ink/85">
             Семь лет, тысяча чашек кофе, два переезда и один маленький рыжий кот спустя — мы поняли,
             мы поняли, что хотим праздновать всё это вместе. Всегда.
@@ -277,15 +269,7 @@ function Invitation() {
 
         {/* Dress code */}
         <Reveal as="section" className="relative mt-20 text-center" variant="paper">
-          <img
-            src={bouquet}
-            alt=""
-            width={512}
-            height={640}
-            loading="lazy"
-            className="mx-auto w-28 opacity-85 deco-rotate-left animate-float-slow"
-          />
-          <h2 className="mt-3 font-script text-4xl sm:text-3xl text-burgundy">дресс-код</h2>
+          <h2 className="font-script text-4xl sm:text-3xl text-burgundy">дресс-код</h2>
           <p className="mx-auto mt-3 max-w-xs font-serif-display italic text-lg sm:text-base text-ink/75">
             мы за ваш комфорт, поэтому можете выбрать лобой наряд! но если ваша душа просит
             эстетики, присмотритесь к этим цветам они идеально впишутся в наш праздник
