@@ -140,7 +140,7 @@ function Invitation() {
             <h2 className="text-center font-script text-5xl sm:text-4xl text-forest">Тайминг</h2>
           </Reveal>
 
-          <ul className="mt-10 space-y-14">
+          <ul className="mt-12 space-y-20">
             {[
               {
                 time: "15:30",
@@ -179,12 +179,12 @@ function Invitation() {
               },
             ].map((item, i) => (
               <Reveal key={item.time} as="li" variant="paper" delay={i * 100} className="relative">
-                <div className="relative flex items-stretch gap-3">
+                <div className="relative flex items-stretch gap-6 sm:gap-8">
                   {/* Левая иллюстрация */}
-                  <div className="w-20 sm:w-24 shrink-0 flex items-center justify-center">
+                  <div className="w-28 sm:w-32 shrink-0 flex items-center justify-center">
                     {item.side === "left" && (
                       <div
-                        className="relative h-20 w-20 sm:h-24 sm:w-24 overflow-hidden"
+                        className="relative h-28 w-28 sm:h-32 sm:w-32 overflow-hidden"
                         style={{ transform: `rotate(${i % 2 === 0 ? "-4deg" : "-2deg"})` }}
                       >
                         {item.image ? (
@@ -216,10 +216,10 @@ function Invitation() {
                   </div>
 
                   {/* Правая иллюстрация */}
-                  <div className="w-20 sm:w-24 shrink-0 flex items-center justify-center">
+                  <div className="w-28 sm:w-32 shrink-0 flex items-center justify-center">
                     {item.side === "right" && (
                       <div
-                        className="relative h-20 w-20 sm:h-24 sm:w-24 overflow-hidden"
+                        className="relative h-28 w-28 sm:h-32 sm:w-32 overflow-hidden"
                         style={{ transform: `rotate(${i % 2 === 0 ? "4deg" : "2deg"})` }}
                       >
                         {item.image ? (
