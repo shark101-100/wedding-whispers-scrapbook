@@ -94,7 +94,7 @@
   --font-script: 'Climate Crisis', ui-serif, Georgia, serif;
   --font-hand: 'Playpen Sans', ui-rounded, system-ui, sans-serif;
   --font-marker: 'Playpen Sans', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playpen Sans', ui-rounded, system-ui, -apple-system, sans-serif;
   --card: oklch(0.97 0.02 80);
   --card-foreground: var(--ink);
   --popover: oklch(0.97 0.02 80);
