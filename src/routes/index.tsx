@@ -5,6 +5,7 @@ import bouquet from "@/assets/bouquet.png";
 import rings from "@/assets/rings.png";
 import rose from "@/assets/rose.png";
 import heart from "@/assets/heart.png";
+import calendarGrid from "@/assets/calendar-grid.png";
 import { RsvpForm } from "@/components/RsvpForm";
 import { Toaster } from "@/components/ui/sonner";
 import { Reveal } from "@/components/Reveal";
