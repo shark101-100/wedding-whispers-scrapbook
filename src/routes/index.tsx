@@ -99,8 +99,8 @@ function Invitation() {
             <p className="font-script text-5xl sm:text-4xl text-ink">июль</p>
             <p className="font-hand text-4xl sm:text-3xl text-ink/80">2026</p>
           </div>
-          <div className="mt-2 h-px w-full bg-ink/40" />
-          <div className="grid grid-cols-3 text-center divide-x divide-ink/40">
+          <div className="mt-2 h-0.5 w-full bg-ink/60" />
+          <div className="grid grid-cols-3 text-center divide-x-2 divide-ink/60">
             <div className="flex flex-col px-2 pt-4">
               <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-ink/70">суббота</p>
               <div className="my-3 h-px w-full bg-ink/30" />
