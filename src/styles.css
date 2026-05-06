@@ -361,7 +361,6 @@
       transform: none !important;
     }
   }
-  }
 
   @keyframes draw-heart {
     from { stroke-dashoffset: 340; }
@@ -372,4 +371,5 @@
     stroke-dashoffset: 340;
     animation: draw-heart 1.6s ease-out 600ms forwards;
   }
+}
 
