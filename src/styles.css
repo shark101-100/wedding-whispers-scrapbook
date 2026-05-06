@@ -369,7 +369,7 @@
   .animate-draw-heart {
     stroke-dasharray: 340;
     stroke-dashoffset: 340;
-    animation: draw-heart 1.6s ease-out 600ms forwards;
+    animation: draw-heart 1.8s ease-out 1400ms forwards;
   }
 }
 
