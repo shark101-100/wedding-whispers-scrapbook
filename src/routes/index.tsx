@@ -112,7 +112,7 @@ function Invitation() {
               <div className="relative flex items-center justify-center">
                 <svg
                   viewBox="0 0 100 90"
-                  className="h-24 w-24 sm:h-20 sm:w-20 text-burgundy"
+                  className="h-36 w-36 sm:h-32 sm:w-32 text-burgundy"
                   style={{ transform: "rotate(-4deg)" }}
                   fill="none"
                   stroke="currentColor"
