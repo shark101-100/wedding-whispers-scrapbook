@@ -93,44 +93,44 @@ function Invitation() {
           </div>
         </header>
 
-        {/* Date card */}
+        {/* Date */}
         <Reveal as="section" className="relative mt-14" variant="paper">
-          <PolaroidNote rotate="-1.5deg">
-            <div className="flex items-baseline justify-between px-2">
-              <p className="font-script text-3xl sm:text-2xl text-ink">июль</p>
-              <p className="font-hand text-2xl sm:text-xl text-ink/80">2026</p>
+          <div className="flex items-baseline justify-between px-2">
+            <p className="font-script text-5xl sm:text-4xl text-ink">июль</p>
+            <p className="font-hand text-4xl sm:text-3xl text-ink/80">2026</p>
+          </div>
+          <div className="mt-2 h-px w-full bg-ink/40" />
+          <div className="mt-6 grid grid-cols-3 text-center">
+            <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-ink/70">суббота</p>
+            <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-burgundy">воскресенье</p>
+            <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-ink/70">понедельник</p>
+          </div>
+          <div className="mt-4 grid grid-cols-3 text-center divide-x divide-ink/30">
+            <p className="font-script text-6xl sm:text-5xl text-ink/80 px-2">4</p>
+            <div className="relative flex items-center justify-center px-2">
+              <svg
+                viewBox="0 0 100 100"
+                className="absolute inset-0 h-full w-full text-burgundy"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+              >
+                <path d="M50 12 C 22 14, 12 38, 18 60 C 24 82, 50 92, 70 84 C 92 76, 92 46, 82 28 C 74 14, 58 10, 50 12 Z" />
+              </svg>
+              <p className="relative font-script text-6xl sm:text-5xl text-burgundy">5</p>
             </div>
-            <div className="mt-1 h-px w-full bg-ink/30" />
-            <div className="mt-4 grid grid-cols-3 gap-2 text-center">
-              <p className="font-marker text-xs sm:text-[0.7rem] uppercase tracking-wider text-ink/70">суббота</p>
-              <p className="font-marker text-xs sm:text-[0.7rem] uppercase tracking-wider text-burgundy">воскресенье</p>
-              <p className="font-marker text-xs sm:text-[0.7rem] uppercase tracking-wider text-ink/70">понедельник</p>
-
-              <p className="font-script text-4xl sm:text-3xl text-ink/80 mt-3">4</p>
-              <div className="relative mt-2 flex items-center justify-center">
-                <svg
-                  viewBox="0 0 100 100"
-                  className="absolute inset-0 h-full w-full text-burgundy"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                >
-                  <path d="M50 12 C 22 14, 12 38, 18 60 C 24 82, 50 92, 70 84 C 92 76, 92 46, 82 28 C 74 14, 58 10, 50 12 Z" />
-                </svg>
-                <p className="relative font-script text-4xl sm:text-3xl text-burgundy">5</p>
-              </div>
-              <p className="font-script text-4xl sm:text-3xl text-ink/80 mt-3">6</p>
-            </div>
-            <p className="mt-5 text-center font-hand text-xl sm:text-lg text-forest">в 15:30</p>
-          </PolaroidNote>
+            <p className="font-script text-6xl sm:text-5xl text-ink/80 px-2">6</p>
+          </div>
+          <div className="mt-2 h-px w-full bg-ink/40" />
+          <p className="mt-6 text-center font-hand text-2xl sm:text-xl text-forest">в 15:30</p>
           <img
             src={heart}
             alt=""
             width={512}
             height={512}
             loading="lazy"
-            className="absolute -bottom-6 -right-2 w-16 rotate-12 opacity-70 animate-float"
+            className="absolute -bottom-10 -right-2 w-16 rotate-12 opacity-70 animate-float"
           />
         </Reveal>
 
