@@ -78,10 +78,10 @@
   --radius: 0.625rem;
 
   /* Wedding scrapbook palette — warm muted tones */
-  --background: oklch(0.995 0.004 90);          /* near white */
+  --background: oklch(0.995 0.003 95);          /* almost pure white */
   --foreground: oklch(0.32 0.04 40);            /* soft dark ink brown */
-  --paper: oklch(0.99 0.006 85);
-  --paper-deep: oklch(0.97 0.01 80);
+  --paper: oklch(0.96 0.018 75);                /* warm cream card */
+  --paper-deep: oklch(0.93 0.025 72);
   --ink: oklch(0.28 0.03 40);
 
   --burgundy: oklch(0.42 0.13 20);              /* muted bordeaux */
@@ -95,7 +95,7 @@
   --font-hand: 'Shantell Sans', ui-rounded, system-ui, sans-serif;
   --font-marker: 'Shantell Sans', ui-rounded, system-ui, sans-serif;
   --font-serif: 'Shantell Sans', ui-rounded, system-ui, sans-serif;
-  --card: oklch(0.99 0.005 85);
+  --card: oklch(0.96 0.018 75);
   --card-foreground: var(--ink);
   --popover: oklch(0.97 0.02 80);
   --popover-foreground: var(--ink);
