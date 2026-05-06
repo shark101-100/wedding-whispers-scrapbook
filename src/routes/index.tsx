@@ -99,51 +99,41 @@ function Invitation() {
             <p className="font-script text-5xl sm:text-4xl text-ink">июль</p>
             <p className="font-hand text-4xl sm:text-3xl text-ink/80">2026</p>
           </div>
-          <table className="mt-2 w-full table-fixed border-collapse text-center">
-            <thead>
-              <tr className="border-y border-ink/40">
-                <th className="border-x border-ink/40 px-2 pt-3 pb-2 font-marker text-sm sm:text-xs font-normal uppercase tracking-wider text-ink/70">
-                  суббота
-                </th>
-                <th className="border-x border-ink/40 px-2 pt-3 pb-2 font-marker text-sm sm:text-xs font-normal uppercase tracking-wider text-burgundy">
-                  воскресенье
-                </th>
-                <th className="border-x border-ink/40 px-2 pt-3 pb-2 font-marker text-sm sm:text-xs font-normal uppercase tracking-wider text-ink/70">
-                  понедельник
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="border-x border-ink/40 px-2 pt-4 pb-2 align-middle">
-                  <p className="font-script text-6xl sm:text-5xl text-ink/80">4</p>
-                </td>
-                <td className="border-x border-ink/40 px-2 pt-4 pb-2 align-middle">
-                  <div className="relative flex items-center justify-center">
-                    <svg
-                      viewBox="0 0 100 90"
-                      className="h-24 w-24 sm:h-20 sm:w-20 text-burgundy"
-                      style={{ transform: "rotate(-4deg)" }}
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path
-                        className="animate-draw-heart"
-                        d="M50 80 C 30 68, 9 54, 13 33 C 16 18, 33 11, 44 22 C 47 25, 49 29, 50 33 C 51 29, 53 25, 56 22 C 67 11, 84 18, 87 33 C 91 54, 70 68, 50 80 Z"
-                      />
-                    </svg>
-                    <p className="absolute font-script text-5xl sm:text-4xl text-burgundy">5</p>
-                  </div>
-                </td>
-                <td className="border-x border-ink/40 px-2 pt-4 pb-2 align-middle">
-                  <p className="font-script text-6xl sm:text-5xl text-ink/80">6</p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="mt-2 h-px w-full bg-ink/40" />
+          <div className="grid grid-cols-3 text-center divide-x divide-ink/40">
+            <div className="flex flex-col px-2 pt-4">
+              <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-ink/70">суббота</p>
+              <div className="my-3 h-px w-full bg-ink/30" />
+              <p className="font-script text-6xl sm:text-5xl text-ink/80">4</p>
+            </div>
+            <div className="flex flex-col px-2 pt-4">
+              <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-burgundy">воскресенье</p>
+              <div className="my-3 h-px w-full bg-ink/30" />
+              <div className="relative flex items-center justify-center">
+                <svg
+                  viewBox="0 0 100 90"
+                  className="h-24 w-24 sm:h-20 sm:w-20 text-burgundy"
+                  style={{ transform: "rotate(-4deg)" }}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path
+                    className="animate-draw-heart"
+                    d="M50 80 C 30 68, 9 54, 13 33 C 16 18, 33 11, 44 22 C 47 25, 49 29, 50 33 C 51 29, 53 25, 56 22 C 67 11, 84 18, 87 33 C 91 54, 70 68, 50 80 Z"
+                  />
+                </svg>
+                <p className="absolute font-script text-5xl sm:text-4xl text-burgundy">5</p>
+              </div>
+            </div>
+            <div className="flex flex-col px-2 pt-4">
+              <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-ink/70">понедельник</p>
+              <div className="my-3 h-px w-full bg-ink/30" />
+              <p className="font-script text-6xl sm:text-5xl text-ink/80">6</p>
+            </div>
+          </div>
           
           
           <img
