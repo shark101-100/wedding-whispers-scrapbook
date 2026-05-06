@@ -129,7 +129,7 @@ function Invitation() {
               <p className="font-script text-6xl sm:text-5xl text-ink/80">6</p>
             </div>
           </div>
-          <div className="h-px w-full bg-ink/40" />
+          
           <p className="mt-6 text-center font-hand text-2xl sm:text-xl text-forest">в 15:30</p>
           <img
             src={heart}
