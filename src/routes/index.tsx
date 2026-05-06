@@ -312,9 +312,9 @@ function Invitation() {
                 Мы за ваш комфорт, поэтому можете выбрать любой наряд! Но если ваша душа просит эстетики, присмотритесь
                 к этим цветам — они идеально впишутся в наш праздник.
               </p>
-              <p className="mt-4 font-hand text-2xl sm:text-xl text-forest">шоколадный · олива · бежевый</p>
+              <p className="mt-4 font-hand text-2xl sm:text-xl text-forest">шоколадный · олива · бежевый · молочный · серый</p>
               <div className="mt-4 flex items-center justify-center gap-3">
-                {["#4a2c1a", "#4a5d3a", "#c9b48a"].map((c, i) => (
+                {["#4a2c1a", "#4a5d3a", "#c9b48a", "#f5efe4", "#9a9a92"].map((c, i) => (
                   <span
                     key={c}
                     className="h-9 w-9 rounded-full border border-border/60 shadow-inner animate-pop"
