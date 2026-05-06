@@ -100,17 +100,17 @@ function Invitation() {
             <p className="font-script text-5xl sm:text-4xl text-ink">июль</p>
             <p className="font-hand text-4xl sm:text-3xl text-ink/80">2026</p>
           </div>
-          <div className="mt-2 h-px w-full bg-ink/40" />
-          <div className="grid grid-cols-3 text-center divide-x divide-ink/40">
+          <div
+            className="mt-2 grid grid-cols-3 text-center bg-no-repeat bg-top bg-contain"
+            style={{ backgroundImage: `url(${calendarGrid})` }}
+          >
             <div className="flex flex-col px-2 pt-4">
               <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-ink/70">суббота</p>
-              <div className="my-3 h-px w-full bg-ink/30" />
-              <p className="font-script text-6xl sm:text-5xl text-ink/80">4</p>
+              <p className="mt-6 font-script text-6xl sm:text-5xl text-ink/80">4</p>
             </div>
             <div className="flex flex-col px-2 pt-4">
               <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-burgundy">воскресенье</p>
-              <div className="my-3 h-px w-full bg-ink/30" />
-              <div className="relative flex items-center justify-center">
+              <div className="relative mt-6 flex items-center justify-center">
                 <svg
                   viewBox="0 0 100 90"
                   className="h-24 w-24 sm:h-20 sm:w-20 text-burgundy"
@@ -131,8 +131,7 @@ function Invitation() {
             </div>
             <div className="flex flex-col px-2 pt-4">
               <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-ink/70">понедельник</p>
-              <div className="my-3 h-px w-full bg-ink/30" />
-              <p className="font-script text-6xl sm:text-5xl text-ink/80">6</p>
+              <p className="mt-6 font-script text-6xl sm:text-5xl text-ink/80">6</p>
             </div>
           </div>
           
