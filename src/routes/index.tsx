@@ -103,12 +103,12 @@ function Invitation() {
           <div className="grid grid-cols-3 text-center divide-x divide-ink/40">
             <div className="flex flex-col px-2 pt-4">
               <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-ink/70">суббота</p>
-              <div className="my-3 h-px w-full bg-ink/30" />
+              <div className="my-3 h-px w-full bg-ink" />
               <p className="font-script text-6xl sm:text-5xl text-ink/80">4</p>
             </div>
             <div className="flex flex-col px-2 pt-4">
               <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-burgundy">воскресенье</p>
-              <div className="my-3 h-px w-full bg-ink/30" />
+              <div className="my-3 h-px w-full bg-ink" />
               <div className="relative flex items-center justify-center">
                 <svg
                   viewBox="0 0 100 100"
@@ -125,7 +125,7 @@ function Invitation() {
             </div>
             <div className="flex flex-col px-2 pt-4">
               <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-ink/70">понедельник</p>
-              <div className="my-3 h-px w-full bg-ink/30" />
+              <div className="my-3 h-px w-full bg-ink" />
               <p className="font-script text-6xl sm:text-5xl text-ink/80">6</p>
             </div>
           </div>
