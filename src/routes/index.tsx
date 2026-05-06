@@ -109,16 +109,18 @@ function Invitation() {
             <div className="flex flex-col px-2 pt-4">
               <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-burgundy">воскресенье</p>
               <div className="my-3 h-px w-full bg-ink/30" />
-              <div className="relative flex items-center justify-center">
+              <div className="relative flex items-center justify-center py-2">
                 <svg
                   viewBox="0 0 100 100"
+                  preserveAspectRatio="none"
                   className="absolute inset-0 h-full w-full text-burgundy"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="3"
+                  strokeWidth="2.5"
                   strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  <path d="M50 12 C 22 14, 12 38, 18 60 C 24 82, 50 92, 70 84 C 92 76, 92 46, 82 28 C 74 14, 58 10, 50 12 Z" />
+                  <path d="M50 88 C 38 78, 18 66, 12 48 C 6 30, 20 14, 34 18 C 42 20, 48 26, 50 32 C 53 25, 60 18, 70 18 C 84 18, 94 32, 88 50 C 82 68, 62 80, 50 88 Z" />
                 </svg>
                 <p className="relative font-script text-6xl sm:text-5xl text-burgundy">5</p>
               </div>
