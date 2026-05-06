@@ -53,14 +53,14 @@ function Invitation() {
       <div className="mx-auto w-full max-w-md px-5 pb-24 pt-10 sm:max-w-lg sm:px-8">
         {/* Header sketch */}
         <header className="relative text-center">
-          <p
+          {/* <p
             className="font-hand text-3xl sm:text-2xl text-forest tracking-wide animate-paper-in"
             style={{ animationDelay: "0ms" }}
           >
             — с радостью приглашаем —
-          </p>
+          </p> */}
 
-          <div className="relative mt-6">
+          <div className="relative mt-15">
             {/* <img
               src={florals}
               alt=""
@@ -96,8 +96,8 @@ function Invitation() {
         {/* Date */}
         <Reveal as="section" className="relative mt-14" variant="paper">
           <div className="flex items-baseline justify-between px-2">
-            <p className="font-script text-5xl sm:text-4xl text-ink">июль</p>
-            <p className="font-hand text-4xl sm:text-3xl text-ink/80">2026</p>
+            <p className="font-hand text-4xl sm:text-4xl text-burgundy">июль</p>
+            <p className="font-hand text-4xl sm:text-3xl text-burgundy">2026</p>
           </div>
           <div className="mt-2 h-0.5 w-full bg-ink/60" />
           <div className="grid grid-cols-3 text-center divide-x-2 divide-ink/60">
@@ -161,7 +161,7 @@ function Invitation() {
         </Reveal> */}
 
         {/* Schedule — «Тайминг» */}
-        <section className="relative mt-20">
+        <section className="relative mt-30">
           <Reveal variant="paper">
             <h2 className="text-center font-script text-5xl sm:text-4xl text-forest">Тайминг</h2>
           </Reveal>
