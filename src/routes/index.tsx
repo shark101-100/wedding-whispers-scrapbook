@@ -101,18 +101,20 @@ function Invitation() {
           </div>
           <div className="mt-2 h-0.5 w-full bg-ink/60" />
           <div className="grid grid-cols-3 text-center divide-x-2 divide-ink/60">
-            <div className="flex flex-col px-2 pt-4">
-              <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-ink/70">суббота</p>
+            <div className="flex flex-col px-1 pt-4 sm:px-2">
+              <p className="font-marker text-[0.6rem] sm:text-xs uppercase tracking-wider text-ink/70 break-words">суббота</p>
               <div className="my-3 h-0.5 w-full bg-ink/50" />
-              <p className="font-script text-6xl sm:text-5xl text-ink/80">4</p>
+              <div className="relative flex h-24 sm:h-28 items-center justify-center">
+                <p className="font-script text-5xl sm:text-5xl text-ink/80">4</p>
+              </div>
             </div>
-            <div className="flex flex-col px-2 pt-4">
-              <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-burgundy">воскресенье</p>
+            <div className="flex flex-col px-1 pt-4 sm:px-2">
+              <p className="font-marker text-[0.6rem] sm:text-xs uppercase tracking-wider text-burgundy break-words">воскресенье</p>
               <div className="my-3 h-0.5 w-full bg-ink/50" />
-              <div className="relative flex items-center justify-center">
+              <div className="relative flex h-24 sm:h-28 items-center justify-center">
                 <svg
                   viewBox="0 0 100 90"
-                  className="h-36 w-36 sm:h-32 sm:w-32 text-burgundy"
+                  className="h-24 w-24 sm:h-28 sm:w-28 text-burgundy"
                   style={{ transform: "rotate(-4deg)" }}
                   fill="none"
                   stroke="currentColor"
@@ -125,13 +127,15 @@ function Invitation() {
                     d="M50 80 C 30 68, 9 54, 13 33 C 16 18, 33 11, 44 22 C 47 25, 49 29, 50 33 C 51 29, 53 25, 56 22 C 67 11, 84 18, 87 33 C 91 54, 70 68, 50 80 Z"
                   />
                 </svg>
-                <p className="absolute font-script text-5xl sm:text-4xl text-burgundy">5</p>
+                <p className="absolute font-script text-4xl sm:text-4xl text-burgundy">5</p>
               </div>
             </div>
-            <div className="flex flex-col px-2 pt-4">
-              <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-ink/70">понедельник</p>
+            <div className="flex flex-col px-1 pt-4 sm:px-2">
+              <p className="font-marker text-[0.6rem] sm:text-xs uppercase tracking-wider text-ink/70 break-words">понедельник</p>
               <div className="my-3 h-0.5 w-full bg-ink/50" />
-              <p className="font-script text-6xl sm:text-5xl text-ink/80">6</p>
+              <div className="relative flex h-24 sm:h-28 items-center justify-center">
+                <p className="font-script text-5xl sm:text-5xl text-ink/80">6</p>
+              </div>
             </div>
           </div>
           
