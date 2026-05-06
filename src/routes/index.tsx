@@ -100,36 +100,30 @@ function Invitation() {
             <p className="font-hand text-4xl sm:text-3xl text-ink/80">2026</p>
           </div>
           <div className="mt-2 h-px w-full bg-ink/40" />
+          <div className="grid grid-cols-3 text-center">
+            <p className="px-2 font-marker text-sm sm:text-xs uppercase tracking-wider text-ink/70">суббота</p>
+            <p className="px-2 font-marker text-sm sm:text-xs uppercase tracking-wider text-burgundy">воскресенье</p>
+            <p className="px-2 font-marker text-sm sm:text-xs uppercase tracking-wider text-ink/70">понедельник</p>
+          </div>
+          <div className="my-3 h-px w-full bg-ink/30" />
           <div className="grid grid-cols-3 text-center divide-x divide-ink/40">
-            <div className="flex flex-col px-2 pt-4">
-              <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-ink/70">суббота</p>
-              <div className="my-3 h-px w-full bg-ink/30" />
-              <p className="font-script text-6xl sm:text-5xl text-ink/80">4</p>
+            <p className="px-2 font-script text-6xl sm:text-5xl text-ink/80">4</p>
+            <div className="relative flex items-center justify-center px-2 py-2">
+              <svg
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+                className="absolute inset-0 h-full w-full text-burgundy"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M50 88 C 38 78, 18 66, 12 48 C 6 30, 20 14, 34 18 C 42 20, 48 26, 50 32 C 53 25, 60 18, 70 18 C 84 18, 94 32, 88 50 C 82 68, 62 80, 50 88 Z" />
+              </svg>
+              <p className="relative font-script text-6xl sm:text-5xl text-burgundy">5</p>
             </div>
-            <div className="flex flex-col px-2 pt-4">
-              <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-burgundy">воскресенье</p>
-              <div className="my-3 h-px w-full bg-ink/30" />
-              <div className="relative flex items-center justify-center py-2">
-                <svg
-                  viewBox="0 0 100 100"
-                  preserveAspectRatio="none"
-                  className="absolute inset-0 h-full w-full text-burgundy"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M50 88 C 38 78, 18 66, 12 48 C 6 30, 20 14, 34 18 C 42 20, 48 26, 50 32 C 53 25, 60 18, 70 18 C 84 18, 94 32, 88 50 C 82 68, 62 80, 50 88 Z" />
-                </svg>
-                <p className="relative font-script text-6xl sm:text-5xl text-burgundy">5</p>
-              </div>
-            </div>
-            <div className="flex flex-col px-2 pt-4">
-              <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-ink/70">понедельник</p>
-              <div className="my-3 h-px w-full bg-ink/30" />
-              <p className="font-script text-6xl sm:text-5xl text-ink/80">6</p>
-            </div>
+            <p className="px-2 font-script text-6xl sm:text-5xl text-ink/80">6</p>
           </div>
           
           
