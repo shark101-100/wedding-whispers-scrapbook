@@ -130,7 +130,7 @@ function Invitation() {
             </div>
           </div>
           
-          <p className="mt-6 text-center font-hand text-2xl sm:text-xl text-forest">в 15:30</p>
+          
           <img
             src={heart}
             alt=""
