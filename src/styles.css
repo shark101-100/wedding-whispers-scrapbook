@@ -188,7 +188,7 @@
 
 @layer utilities {
   .font-script { font-family: var(--font-script); font-weight: 600; letter-spacing: 0; }
-  .font-hand { font-family: var(--font-hand); font-weight: 500; letter-spacing: 0; }
+  .font-hand { font-family: var(--font-hand); font-weight: 400; letter-spacing: 0; }
   .font-marker { font-family: var(--font-marker); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
   .font-serif-display { font-family: var(--font-serif); font-weight: 400; }
 
