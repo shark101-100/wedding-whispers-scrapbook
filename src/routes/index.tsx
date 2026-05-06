@@ -115,7 +115,7 @@ function Invitation() {
                 <svg
                   viewBox="0 0 100 90"
                   className="h-24 w-24 sm:h-28 sm:w-28 text-burgundy"
-                  style={{ transform: "rotate(-4deg)" }}
+                  style={{ transform: "translateY(-8px) rotate(-4deg)" }}
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2.5"
