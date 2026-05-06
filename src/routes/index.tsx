@@ -5,7 +5,6 @@ import bouquet from "@/assets/bouquet.png";
 import rings from "@/assets/rings.png";
 import rose from "@/assets/rose.png";
 import heart from "@/assets/heart.png";
-import heartSketch from "@/assets/heart-sketch.png";
 import { RsvpForm } from "@/components/RsvpForm";
 import { Toaster } from "@/components/ui/sonner";
 import { Reveal } from "@/components/Reveal";
@@ -111,16 +110,21 @@ function Invitation() {
               <p className="font-marker text-sm sm:text-xs uppercase tracking-wider text-burgundy">воскресенье</p>
               <div className="my-3 h-0.5 w-full bg-ink/50" />
               <div className="relative flex items-center justify-center">
-                <img
-                  src={heartSketch}
-                  alt=""
-                  aria-hidden="true"
-                  className="h-24 w-24 sm:h-20 sm:w-20 object-contain animate-heart-draw"
-                  style={{
-                    filter:
-                      "brightness(0) saturate(100%) invert(18%) sepia(40%) saturate(2200%) hue-rotate(320deg) brightness(70%) contrast(95%)",
-                  }}
-                />
+                <svg
+                  viewBox="0 0 100 90"
+                  className="h-24 w-24 sm:h-20 sm:w-20 text-burgundy"
+                  style={{ transform: "rotate(-4deg)" }}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path
+                    className="animate-draw-heart"
+                    d="M50 80 C 30 68, 9 54, 13 33 C 16 18, 33 11, 44 22 C 47 25, 49 29, 50 33 C 51 29, 53 25, 56 22 C 67 11, 84 18, 87 33 C 91 54, 70 68, 50 80 Z"
+                  />
+                </svg>
                 <p className="absolute font-script text-5xl sm:text-4xl text-burgundy">5</p>
               </div>
             </div>
