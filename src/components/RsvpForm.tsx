@@ -8,11 +8,7 @@ import florals from "@/assets/florals.png";
 import rose from "@/assets/rose.png";
 
 const schema = z.object({
-  guest_name: z
-    .string()
-    .trim()
-    .min(2, "Укажите имя")
-    .max(100, "Слишком длинное имя"),
+  guest_name: z.string().trim().min(2, "Укажите имя").max(100, "Слишком длинное имя"),
   attending: z.boolean(),
   guests_count: z.number().int().min(0).max(3),
   message: z.string().trim().max(500, "Не больше 500 символов").optional(),
@@ -79,9 +75,6 @@ export function RsvpForm({ header }: { header?: React.ReactNode } = {}) {
       <div ref={doneRef} className="relative py-2">
         {/* main card content (no extra rotated card — sits inside parent polaroid) */}
         <div className="relative mx-auto w-full max-w-sm animate-paper-in">
-
-
-
           {/* rings illustration */}
           <img
             src={rings}
@@ -93,10 +86,7 @@ export function RsvpForm({ header }: { header?: React.ReactNode } = {}) {
           />
 
           {/* hand-drawn divider */}
-          <div
-            className="mx-auto mt-3 h-3 w-32 ink-line animate-ink-draw"
-            style={{ animationDelay: "300ms" }}
-          />
+          <div className="mx-auto mt-3 h-3 w-32 ink-line animate-ink-draw" style={{ animationDelay: "300ms" }} />
 
           <p
             className="mt-4 text-center font-script text-4xl text-burgundy animate-paper-in"
@@ -132,46 +122,27 @@ export function RsvpForm({ header }: { header?: React.ReactNode } = {}) {
               </p>
               <div className="mt-2 flex items-center justify-around text-center">
                 <div>
-                  <p className="font-marker text-[0.6rem] uppercase tracking-widest text-ink/55">
-                    гостей
-                  </p>
-                  <p className="font-script text-2xl text-burgundy leading-none mt-0.5">
-                    {count}
-                  </p>
+                  <p className="font-marker text-[0.6rem] uppercase tracking-widest text-ink/55">гостей</p>
+                  <p className="font-script text-2xl text-burgundy leading-none mt-0.5">{count}</p>
                 </div>
                 <span className="h-8 w-px border-l border-dashed border-forest/40" />
                 <div>
-                  <p className="font-marker text-[0.6rem] uppercase tracking-widest text-ink/55">
-                    дата
-                  </p>
-                  <p className="font-script text-2xl text-burgundy leading-none mt-0.5">
-                    05·07
-                  </p>
+                  <p className="font-marker text-[0.6rem] uppercase tracking-widest text-ink/55">дата</p>
+                  <p className="font-script text-2xl text-burgundy leading-none mt-0.5">05·07</p>
                 </div>
                 <span className="h-8 w-px border-l border-dashed border-forest/40" />
                 <div>
-                  <p className="font-marker text-[0.6rem] uppercase tracking-widest text-ink/55">
-                    в
-                  </p>
-                  <p className="font-script text-2xl text-burgundy leading-none mt-0.5">
-                    15:30
-                  </p>
+                  <p className="font-marker text-[0.6rem] uppercase tracking-widest text-ink/55">в</p>
+                  <p className="font-script text-2xl text-burgundy leading-none mt-0.5">15:30</p>
                 </div>
               </div>
             </div>
           )}
 
           {/* signature */}
-          <div
-            className="mt-6 text-center animate-paper-in"
-            style={{ animationDelay: "700ms" }}
-          >
-            <p className="font-script text-2xl text-burgundy leading-none">
-              до встречи
-            </p>
-            <p className="mt-1 font-hand text-lg text-forest">
-              В. & Е. ♡
-            </p>
+          <div className="mt-6 text-center animate-paper-in" style={{ animationDelay: "700ms" }}>
+            <p className="font-script text-2xl text-burgundy leading-none">до встречи</p>
+            <p className="mt-1 font-hand text-lg text-forest">В. & Е. ♡</p>
           </div>
         </div>
 
@@ -182,7 +153,7 @@ export function RsvpForm({ header }: { header?: React.ReactNode } = {}) {
         >
           <span className="tape -top-2 left-1/2 -translate-x-1/2" style={{ width: 50, height: 16 }} />
           <p className="font-hand text-base text-ink/80 leading-snug font-bold">
-            если планы изменятся сообщите до 1 июля —<br />
+            если планы изменятся сообщите до 1 июня —<br />
             <button
               type="button"
               onClick={() => {
@@ -202,9 +173,7 @@ export function RsvpForm({ header }: { header?: React.ReactNode } = {}) {
     <form onSubmit={onSubmit} className="space-y-5 text-left">
       {header && <div className="mb-2">{header}</div>}
       <div>
-        <label className="font-hand text-xl sm:text-lg text-forest block mb-1">
-          ваше имя
-        </label>
+        <label className="font-hand text-xl sm:text-lg text-forest block mb-1">ваше имя</label>
         <input
           type="text"
           value={name}
@@ -246,9 +215,7 @@ export function RsvpForm({ header }: { header?: React.ReactNode } = {}) {
 
       {attending === true && (
         <div className="animate-paper-in">
-          <label className="font-hand text-xl sm:text-lg text-forest block mb-2">
-            сколько вас будет?
-          </label>
+          <label className="font-hand text-xl sm:text-lg text-forest block mb-2">сколько вас будет?</label>
           <div className="flex items-center justify-center gap-5">
             <button
               type="button"
@@ -258,10 +225,7 @@ export function RsvpForm({ header }: { header?: React.ReactNode } = {}) {
             >
               −
             </button>
-            <span
-              key={count}
-              className="font-script text-4xl text-burgundy w-12 text-center animate-pop inline-block"
-            >
+            <span key={count} className="font-script text-4xl text-burgundy w-12 text-center animate-pop inline-block">
               {count}
             </span>
             <button

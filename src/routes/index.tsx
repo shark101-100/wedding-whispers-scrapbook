@@ -332,7 +332,7 @@ function Invitation() {
                 <div className="text-center">
                   <h2 className="font-script text-4xl sm:text-3xl text-burgundy">подтвердите участие</h2>
                   <p className="mt-2 font-serif-display text-lg sm:text-base text-ink/80">
-                    ответьте, пожалуйста, до <span className="font-hand text-burgundy">1 июля</span>
+                    ответьте, пожалуйста, до <span className="font-hand text-burgundy">1 июня</span>
                   </p>
                 </div>
               }
