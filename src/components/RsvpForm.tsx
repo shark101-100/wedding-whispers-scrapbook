@@ -195,7 +195,7 @@ export function RsvpForm({ header }: { header?: React.ReactNode } = {}) {
           value={name}
           onChange={(e) => setName(e.target.value)}
           maxLength={100}
-          placeholder="укажите имена гостей"
+          placeholder="Виктория и Егор"
           className="w-full bg-transparent border-0 border-b-2 border-dashed border-ink/40 focus:border-burgundy focus:outline-none py-2 font-serif-display text-xl sm:text-lg text-ink placeholder:text-ink/30 transition-colors"
           required
         />
