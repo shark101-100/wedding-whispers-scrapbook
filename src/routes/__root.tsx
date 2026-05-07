@@ -30,7 +30,9 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
       { name: "theme-color", content: "#fefdf7" },
-      { name: "apple-mobile-web-app-status-bar-style", content: "default" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
       { title: "Приглашение на свадьбу" },
       { name: "description", content: "Приглашение на свадьбу Виктории и Егора" },
       { name: "author", content: "Lovable" },
@@ -61,11 +63,11 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-background" style={{ backgroundColor: "#fefdf7" }}>
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="bg-background" style={{ backgroundColor: "#fefdf7" }}>
         {children}
         <Scripts />
       </body>
