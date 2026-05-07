@@ -345,6 +345,11 @@ function Invitation() {
           <p className="font-hand text-2xl sm:text-xl text-forest">В. & Е.</p>
           <p className="mt-6 font-marker text-xs uppercase tracking-[0.3em] text-ink/50">05 · 07 · 2026</p>
         </Reveal>
+
+        {/* Countdown */}
+        <Reveal as="section" className="relative mt-20" variant="paper">
+          <Countdown />
+        </Reveal>
       </div>
       <Toaster position="top-center" />
     </main>
