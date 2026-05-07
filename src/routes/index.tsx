@@ -9,6 +9,7 @@ import { RsvpForm } from "@/components/RsvpForm";
 import { Toaster } from "@/components/ui/sonner";
 import { Reveal } from "@/components/Reveal";
 import { Countdown } from "@/components/Countdown";
+import { HeartDraw } from "@/components/HeartDraw";
 
 export const Route = createFileRoute("/")({
   component: Invitation,
@@ -116,21 +117,7 @@ function Invitation() {
               </p>
               <div className="my-3 h-0.5 w-full bg-ink/50" />
               <div className="relative flex h-32 sm:h-36 items-center justify-center">
-                <svg
-                  viewBox="0 0 100 90"
-                  className="h-32 w-32 sm:h-36 sm:w-36 text-burgundy"
-                  style={{ transform: "translateY(-8px) rotate(-4deg)" }}
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path
-                    className="animate-draw-heart"
-                    d="M50 80 C 30 68, 9 54, 13 33 C 16 18, 33 11, 44 22 C 47 25, 49 29, 50 33 C 51 29, 53 25, 56 22 C 67 11, 84 18, 87 33 C 91 54, 70 68, 50 80 Z"
-                  />
-                </svg>
+                <HeartDraw className="h-32 w-32 sm:h-36 sm:w-36 text-burgundy" />
                 <p className="absolute font-script text-6xl sm:text-6xl text-burgundy">5</p>
               </div>
             </div>
