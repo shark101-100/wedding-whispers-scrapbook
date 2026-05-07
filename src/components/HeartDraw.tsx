@@ -6,27 +6,36 @@ export function HeartDraw({ className = "" }: { className?: string }) {
   useEffect(() => {
     const el = svgRef.current;
     if (!el) return;
-    // If browser supports scroll-driven animations natively, CSS handles it.
-    if (CSS.supports("animation-timeline: view()")) return;
 
     let raf = 0;
-    const update = () => {
+    let hasScrolled = false;
+    const initialY = window.scrollY;
+
+    const compute = () => {
       raf = 0;
+      if (!hasScrolled) {
+        el.style.setProperty("--heart-progress", "0");
+        return;
+      }
       const rect = el.getBoundingClientRect();
       const vh = window.innerHeight || document.documentElement.clientHeight;
-      // 0 when element bottom enters viewport top, 1 when element top reaches 40% of viewport
-      const start = vh; // distance from viewport top when starting
+      const start = vh;
       const end = vh * 0.4;
       const pos = rect.top;
       let p = (start - pos) / (start - end);
       p = Math.max(0, Math.min(1, p));
       el.style.setProperty("--heart-progress", String(p));
     };
+
     const onScroll = () => {
+      if (!hasScrolled && Math.abs(window.scrollY - initialY) > 2) {
+        hasScrolled = true;
+      }
       if (raf) return;
-      raf = requestAnimationFrame(update);
+      raf = requestAnimationFrame(compute);
     };
-    update();
+
+    el.style.setProperty("--heart-progress", "0");
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
     return () => {
