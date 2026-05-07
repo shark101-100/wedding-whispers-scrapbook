@@ -1,5 +1,9 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
+// Force node:http2 into the server bundle — undici lazily requires it for ALPN
+// negotiation and Nitro otherwise tree-shakes it, causing
+// "TypeError: http2.connect is not a function" at runtime.
+import "node:http2";
 
 const inputSchema = z.object({
   guest_name: z.string().trim().min(1).max(100),
@@ -48,13 +52,16 @@ export const notifyRsvp = createServerFn({ method: "POST" })
         if (/^socks/i.test(proxyUrl)) {
           const { socksDispatcher } = await import("fetch-socks");
           const u = new URL(proxyUrl);
-          dispatcher = socksDispatcher({
-            type: 5,
-            host: u.hostname,
-            port: Number(u.port) || 1080,
-            userId: decodeURIComponent(u.username) || undefined,
-            password: decodeURIComponent(u.password) || undefined,
-          });
+          dispatcher = socksDispatcher(
+            {
+              type: 5,
+              host: u.hostname,
+              port: Number(u.port) || 1080,
+              userId: decodeURIComponent(u.username) || undefined,
+              password: decodeURIComponent(u.password) || undefined,
+            },
+            { allowH2: false, connect: { allowH2: false } } as never,
+          );
         } else {
           dispatcher = new undici.ProxyAgent(proxyUrl);
         }
