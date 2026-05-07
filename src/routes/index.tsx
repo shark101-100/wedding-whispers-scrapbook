@@ -205,12 +205,12 @@ function Invitation() {
               },
             ].map((item, i) => (
               <Reveal key={item.time} as="li" variant="paper" delay={i * 100} className="relative">
-                <div className="relative flex items-stretch gap-3 sm:gap-8">
+                <div className="relative flex items-stretch gap-1 sm:gap-8">
                   {/* Левая иллюстрация */}
-                  <div className="w-20 sm:w-32 shrink-0 flex items-center justify-center">
+                  <div className="w-28 sm:w-32 shrink-0 flex items-center justify-center">
                     {item.side === "left" && (
                       <div
-                        className="relative h-20 w-20 sm:h-32 sm:w-32 overflow-hidden"
+                        className="relative h-28 w-28 sm:h-32 sm:w-32 overflow-hidden"
                         style={{ transform: `rotate(${i % 2 === 0 ? "-4deg" : "-2deg"})` }}
                       >
                         {item.image ? (
@@ -238,10 +238,10 @@ function Invitation() {
                   </div>
 
                   {/* Правая иллюстрация */}
-                  <div className="w-20 sm:w-32 shrink-0 flex items-center justify-center">
+                  <div className="w-28 sm:w-32 shrink-0 flex items-center justify-center">
                     {item.side === "right" && (
                       <div
-                        className="relative h-20 w-20 sm:h-32 sm:w-32 overflow-hidden"
+                        className="relative h-28 w-28 sm:h-32 sm:w-32 overflow-hidden"
                         style={{ transform: `rotate(${i % 2 === 0 ? "4deg" : "2deg"})` }}
                       >
                         {item.image ? (
