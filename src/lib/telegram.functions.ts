@@ -46,11 +46,7 @@ export const notifyRsvp = createServerFn({ method: "POST" })
         const undici = await import("undici");
         fetchImpl = undici.fetch as unknown as typeof fetch;
         if (/^socks/i.test(proxyUrl)) {
-          const { SocksProxyAgent } = await import("socks-proxy-agent");
-          // socks-proxy-agent совместим с undici как Dispatcher через wrapper:
-          // используем undici.Agent с connect через socks
           const { socksDispatcher } = await import("fetch-socks");
-          // Парсим URL: socks5://user:pass@host:port
           const u = new URL(proxyUrl);
           dispatcher = socksDispatcher({
             type: 5,
@@ -59,8 +55,6 @@ export const notifyRsvp = createServerFn({ method: "POST" })
             userId: decodeURIComponent(u.username) || undefined,
             password: decodeURIComponent(u.password) || undefined,
           });
-          // SocksProxyAgent импортирован для совместимости, но не используется
-          void SocksProxyAgent;
         } else {
           dispatcher = new undici.ProxyAgent(proxyUrl);
         }
