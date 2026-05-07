@@ -18,7 +18,7 @@ const schema = z.object({
   message: z.string().trim().max(500, "Не больше 500 символов").optional(),
 });
 
-export function RsvpForm() {
+export function RsvpForm({ header }: { header?: React.ReactNode } = {}) {
   const [attending, setAttending] = useState<boolean | null>(null);
   const [name, setName] = useState("");
   const [count, setCount] = useState(1);
@@ -206,6 +206,7 @@ export function RsvpForm() {
 
   return (
     <form onSubmit={onSubmit} className="space-y-5 text-left">
+      {header && <div className="mb-2">{header}</div>}
       <div>
         <label className="font-hand text-xl sm:text-lg text-forest block mb-1">
           ваше имя

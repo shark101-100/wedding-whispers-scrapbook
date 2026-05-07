@@ -327,15 +327,16 @@ function Invitation() {
         {/* RSVP */}
         <Reveal as="section" className="relative mt-20" variant="paper">
           <PolaroidNote rotate="-1.2deg">
-            <div className="text-center">
-              <h2 className="font-script text-4xl sm:text-3xl text-burgundy">подтвердите участие</h2>
-              <p className="mt-2 font-serif-display text-lg sm:text-base text-ink/80">
-                ответьте, пожалуйста, до <span className="font-hand text-burgundy">1 июля</span>
-              </p>
-            </div>
-            <div className="mt-6">
-              <RsvpForm />
-            </div>
+            <RsvpForm
+              header={
+                <div className="text-center">
+                  <h2 className="font-script text-4xl sm:text-3xl text-burgundy">подтвердите участие</h2>
+                  <p className="mt-2 font-serif-display text-lg sm:text-base text-ink/80">
+                    ответьте, пожалуйста, до <span className="font-hand text-burgundy">1 июля</span>
+                  </p>
+                </div>
+              }
+            />
           </PolaroidNote>
         </Reveal>
 
