@@ -1,5 +1,9 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
+// Force node:http2 into the server bundle — undici lazily requires it for ALPN
+// negotiation and Nitro otherwise tree-shakes it, causing
+// "TypeError: http2.connect is not a function" at runtime.
+import "node:http2";
 
 const inputSchema = z.object({
   guest_name: z.string().trim().min(1).max(100),
