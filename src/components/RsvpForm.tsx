@@ -325,7 +325,7 @@ export function RsvpForm() {
           onChange={(e) => setMessage(e.target.value)}
           maxLength={500}
           rows={3}
-          placeholder="пожелания, аллергии, что угодно…"
+          placeholder="Пожелания, любимая песня для плейлиста — что угодно…"
           className="w-full bg-transparent border-2 border-dashed border-ink/30 focus:border-burgundy focus:outline-none p-3 font-serif-display text-lg sm:text-base text-ink placeholder:text-ink/30 resize-none rounded-sm"
         />
       </div>
