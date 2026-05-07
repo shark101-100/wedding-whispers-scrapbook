@@ -5,14 +5,11 @@ import bouquet from "@/assets/bouquet.png";
 import rings from "@/assets/rings.png";
 import rose from "@/assets/rose.png";
 import heart from "@/assets/heart.png";
-import cake from "@/assets/cake.png";
-import disco from "@/assets/disco.png";
-import eat from "@/assets/eat.png";
-import rings2 from "@/assets/rings-2.png";
-import glasses2 from "@/assets/glasses-2.png";
 import { RsvpForm } from "@/components/RsvpForm";
 import { Toaster } from "@/components/ui/sonner";
 import { Reveal } from "@/components/Reveal";
+import { Countdown } from "@/components/Countdown";
+import { HeartDraw } from "@/components/HeartDraw";
 
 export const Route = createFileRoute("/")({
   component: Invitation,
@@ -58,14 +55,14 @@ function Invitation() {
       <div className="mx-auto w-full max-w-md px-5 pb-24 pt-10 sm:max-w-lg sm:px-8">
         {/* Header sketch */}
         <header className="relative text-center">
-          <p
-            className="font-hand text-2xl text-forest tracking-wide animate-paper-in"
+          {/* <p
+            className="font-hand text-3xl sm:text-2xl text-forest tracking-wide animate-paper-in"
             style={{ animationDelay: "0ms" }}
           >
             — с радостью приглашаем —
-          </p>
+          </p> */}
 
-          <div className="relative mt-6">
+          <div className="relative mt-15">
             {/* <img
               src={florals}
               alt=""
@@ -75,118 +72,136 @@ function Invitation() {
               style={{ animationDelay: "150ms" }}
             /> */}
             <h1
-              className="font-script text-[2.6rem] leading-[1.1] text-burgundy mt-2 animate-paper-in"
+              className="font-script text-[3.2rem] sm:text-[2.6rem] leading-[1.1] text-burgundy mt-2 animate-paper-in"
               style={{ animationDelay: "300ms" }}
             >
               Виктория
-              <span className="block font-hand text-3xl text-forest -my-1">&</span>
+              <span className="block font-hand text-4xl sm:text-3xl text-forest -my-1">&</span>
               Егор
             </h1>
-            <div
-              className="mx-auto mt-3 h-3 w-40 ink-line animate-ink-draw"
-              style={{ animationDelay: "650ms" }}
-            />
+            <div className="mx-auto mt-3 h-3 w-40 ink-line animate-ink-draw" style={{ animationDelay: "650ms" }} />
           </div>
 
-          <p
-            className="mt-6 font-hand text-xl text-ink/80 leading-snug animate-paper-in"
+          <div
+            className="mt-6 font-hand text-lg sm:text-xl font-serif-display text-ink/80 leading-snug animate-paper-in space-y-3"
             style={{ animationDelay: "450ms" }}
           >
-            Зовём вас праздновать
-            <br />
-            самый важный день
-          </p>
+            <p>
+              Дорогие родные и друзья! <br />
+              Один день в этом году станет для нас особенно важным, и мы хотим провести его в кругу близких! <br />С
+              большим удовольствием приглашаем вас на нашу свадьбу, которая состоится:
+            </p>
+          </div>
         </header>
 
-        {/* Date card */}
+        {/* Date */}
         <Reveal as="section" className="relative mt-14" variant="paper">
-          <PolaroidNote rotate="-1.5deg">
-            <p className="font-hand text-center text-lg text-forest">сохраните дату</p>
-            <div className="mt-3 flex items-center justify-center gap-4">
-              <div className="text-center">
-                <p className="font-marker text-sm uppercase tracking-widest text-ink/60">вс</p>
-                <p className="font-script text-3xl text-burgundy">5</p>
-              </div>
-              <div className="h-14 w-px bg-border" />
-              <div className="text-center">
-                <p className="font-script text-2xl text-ink leading-none">июля</p>
-                <p className="font-hand text-xl text-forest">2026</p>
-              </div>
-              <div className="h-14 w-px bg-border" />
-              <div className="text-center">
-                <p className="font-marker text-sm uppercase tracking-widest text-ink/60">в</p>
-                <p className="font-script text-3xl text-burgundy">15:30</p>
+          <div className="flex items-baseline justify-between px-2">
+            <p className="font-hand text-4xl sm:text-4xl text-burgundy">июль</p>
+            <p className="font-hand text-4xl sm:text-3xl text-burgundy">2026</p>
+          </div>
+          <div className="mt-2 h-0.5 w-full bg-ink/60" />
+          <div className="grid grid-cols-3 text-center divide-x-2 divide-ink/60">
+            <div className="flex flex-col px-1 pt-4 sm:px-2">
+              <p className="font-marker text-[0.6rem] sm:text-xs uppercase tracking-wider text-ink/70 break-words">
+                суббота
+              </p>
+              <div className="my-3 h-0.5 w-full bg-ink/50" />
+              <div className="relative flex h-32 sm:h-36 items-center justify-center">
+                <p className="font-script text-7xl sm:text-7xl text-ink/80">4</p>
               </div>
             </div>
-          </PolaroidNote>
-          <img
-            src={heart}
-            alt=""
-            width={512}
-            height={512}
-            loading="lazy"
-            className="absolute -bottom-6 -right-2 w-16 rotate-12 opacity-70 animate-float"
-          />
+            <div className="flex flex-col px-1 pt-4 sm:px-2">
+              <p className="font-marker text-[0.6rem] sm:text-xs uppercase tracking-wider text-burgundy break-words">
+                воскресенье
+              </p>
+              <div className="my-3 h-0.5 w-full bg-ink/50" />
+              <div className="relative flex h-32 sm:h-36 items-center justify-center">
+                <HeartDraw className="h-32 w-32 sm:h-36 sm:w-36 text-burgundy" />
+                <p className="absolute font-script text-6xl sm:text-6xl text-burgundy">5</p>
+              </div>
+            </div>
+            <div className="flex flex-col px-1 pt-4 sm:px-2">
+              <p className="font-marker text-[0.6rem] sm:text-xs uppercase tracking-wider text-ink/70 break-words">
+                понедельник
+              </p>
+              <div className="my-3 h-0.5 w-full bg-ink/50" />
+              <div className="relative flex h-32 sm:h-36 items-center justify-center">
+                <p className="font-script text-7xl sm:text-7xl text-ink/80">6</p>
+              </div>
+            </div>
+          </div>
         </Reveal>
 
         {/* Story */}
-        <Reveal as="section" className="relative mt-20 text-center" variant="paper">
-          <img
-            src={rose}
-            alt=""
-            width={512}
-            height={640}
-            loading="lazy"
-            className="mx-auto w-24 opacity-80 deco-rotate-right animate-float-slow"
-          />
-          <h2 className="mt-3 font-script text-3xl text-burgundy">наша история</h2>
-          <p className="mx-auto mt-4 max-w-sm font-serif-display text-[1.05rem] leading-relaxed text-ink/85">
-            Семь лет, тысяча чашек кофе, два переезда и один маленький рыжий кот спустя — мы поняли,
-            мы поняли, что хотим праздновать всё это вместе. Всегда.
+        {/* <Reveal as="section" className="relative mt-20 text-center" variant="paper">
+          <h2 className="font-script text-4xl sm:text-3xl text-burgundy">наша история</h2>
+          <p className="mx-auto mt-4 max-w-sm font-serif-display text-[1.18rem] sm:text-[1.05rem] leading-relaxed text-ink/85">
+            Семь лет, тысяча чашек кофе, два переезда и один маленький рыжий кот спустя — мы поняли, мы поняли, что
+            хотим праздновать всё это вместе. Всегда.
           </p>
-          <p className="mt-4 font-hand text-xl text-forest">…и хотим, чтобы вы были рядом ♡</p>
-        </Reveal>
+          <p className="mt-4 font-hand text-2xl sm:text-xl text-forest">…и хотим, чтобы вы были рядом ♡</p>
+        </Reveal> */}
 
         {/* Schedule — «Тайминг» */}
-        <section className="relative mt-20">
+        <section className="relative mt-30">
           <Reveal variant="paper">
-            <h2 className="text-center font-script text-4xl text-forest">Тайминг</h2>
+            <h2 className="text-center font-script text-5xl sm:text-4xl text-forest">Тайминг</h2>
           </Reveal>
 
-          <ul className="mt-10 space-y-14">
+          <ul className="mt-12 space-y-20">
             {[
-              { time: "15:30", title: "сбор гостей", note: "", image: "", side: "left" as const },
-              { time: "16:00", title: "церемония", note: "", image: "", side: "right" as const },
+              {
+                time: "15:30",
+                title: "сбор гостей",
+                note: "",
+                image: "/images/glasses-2.png",
+                side: "left" as const,
+              },
+              {
+                time: "16:00",
+                title: "церемония",
+                note: "",
+                image: "images/rings-2.png",
+                side: "right" as const,
+              },
               {
                 time: "17:00",
                 title: "праздничный ужин",
                 note: "",
-                image: "",
+                image: "/images/eat.png",
                 side: "left" as const,
               },
-              { time: "22:00", title: "торт", note: "", image: "", side: "right" as const },
+              {
+                time: "22:00",
+                title: "торт",
+                note: "",
+                image: "/images/cake.png",
+                side: "right" as const,
+              },
               {
                 time: "23:00",
                 title: "завершение вечера",
                 note: "",
-                image: "",
+                image: "/images/disco.png",
                 side: "left" as const,
               },
             ].map((item, i) => (
               <Reveal key={item.time} as="li" variant="paper" delay={i * 100} className="relative">
-                <div className="relative flex items-stretch gap-3">
+                <div className="relative flex items-stretch gap-1 sm:gap-8">
                   {/* Левая иллюстрация */}
-                  <div className="w-20 sm:w-24 shrink-0 flex items-center justify-center">
+                  <div className="w-28 sm:w-32 shrink-0 flex items-center justify-center">
                     {item.side === "left" && (
                       <div
-                        className="relative h-20 w-20 sm:h-24 sm:w-24 overflow-hidden"
+                        className="relative h-28 w-28 sm:h-32 sm:w-32 overflow-hidden"
                         style={{ transform: `rotate(${i % 2 === 0 ? "-4deg" : "-2deg"})` }}
                       >
                         {item.image ? (
                           <img
-                            src={cake}
-                            alt=""
+                            src={item.image}
+                            alt={item.title}
                             loading="lazy"
+                            decoding="async"
                             className="h-full w-full object-contain"
                           />
                         ) : (
@@ -200,27 +215,24 @@ function Invitation() {
 
                   {/* Центральный блок: подпись · время · описание */}
                   <div className="flex-1 text-center">
-                    <p className="font-hand text-base text-forest">{item.title}</p>
-                    <p className="font-script text-5xl sm:text-6xl text-burgundy leading-none mt-2">
-                      {item.time}
-                    </p>
-                    <p className="mt-2 font-serif-display text-xs sm:text-sm text-ink/75 italic">
-                      {item.note}
-                    </p>
+                    <p className="font-hand text-lg sm:text-base text-forest">{item.title}</p>
+                    <p className="font-script text-5xl sm:text-6xl text-burgundy leading-none mt-2">{item.time}</p>
+                    <p className="mt-2 font-serif-display text-sm text-ink/75 italic">{item.note}</p>
                   </div>
 
                   {/* Правая иллюстрация */}
-                  <div className="w-20 sm:w-24 shrink-0 flex items-center justify-center">
+                  <div className="w-28 sm:w-32 shrink-0 flex items-center justify-center">
                     {item.side === "right" && (
                       <div
-                        className="relative h-20 w-20 sm:h-24 sm:w-24 overflow-hidden"
+                        className="relative h-28 w-28 sm:h-32 sm:w-32 overflow-hidden"
                         style={{ transform: `rotate(${i % 2 === 0 ? "4deg" : "2deg"})` }}
                       >
                         {item.image ? (
                           <img
-                            src={eat}
-                            alt=""
+                            src={item.image}
+                            alt={item.title}
                             loading="lazy"
+                            decoding="async"
                             className="h-full w-full object-contain"
                           />
                         ) : (
@@ -240,83 +252,107 @@ function Invitation() {
         {/* Place */}
         <Reveal as="section" className="relative mt-16" variant="paper">
           <PolaroidNote rotate="1.8deg">
-            <p className="text-center font-hand text-xl text-forest">место встречи</p>
-            <p className="mt-3 text-center font-script text-2xl text-burgundy">
-              гостиница «Ариадна»
-            </p>
-            <p className="mt-2 text-center font-serif-display text-ink/80">
+            <p className="text-center font-hand text-2xl sm:text-xl text-forest">место встречи</p>
+            <p className="mt-3 text-center font-script text-3xl sm:text-2xl text-burgundy">гостиница «Ариадна»</p>
+            <p className="mt-2 text-center font-serif-display text-lg sm:text-base text-ink/80">
               Самара, пос. Волжский,
               <br />
-              Жилгородок, 45В.
+              Жилгородок, 45В
             </p>
             <a
               href="https://yandex.com/maps/-/CPS34Y8I"
               target="_blank"
               rel="noreferrer"
-              className="ink-link mt-4 mx-auto block w-fit text-center font-hand text-lg text-burgundy"
+              className="ink-link mt-4 mx-auto block w-fit font-hand text-xl sm:text-lg text-burgundy text-justify"
             >
               открыть на карте →
             </a>
           </PolaroidNote>
         </Reveal>
 
-        {/* Dress code */}
-        <Reveal as="section" className="relative mt-20 text-center" variant="paper">
-          <img
-            src={bouquet}
-            alt=""
-            width={512}
-            height={640}
-            loading="lazy"
-            className="mx-auto w-28 opacity-85 deco-rotate-left animate-float-slow"
-          />
-          <h2 className="mt-3 font-script text-3xl text-burgundy">дресс-код</h2>
-          <p className="mt-3 font-hand text-xl text-forest">бордо · олива · бежевый</p>
-          <p className="mx-auto mt-3 max-w-xs font-serif-display italic text-ink/75">
-            никакой строгости — только уют, мягкие ткани и улыбки
-          </p>
+        {/* Организационные моменты */}
+        <section className="relative mt-20">
+          <Reveal variant="paper">
+            <h2 className="text-center font-script text-5xl sm:text-4xl text-burgundy">организационные моменты</h2>
+            <p className="mx-auto mt-5 max-w-sm text-center font-serif-display text-[1.18rem] sm:text-[1.05rem] leading-relaxed text-ink/85">
+              Чтобы создать по-настоящему расслабленную и праздничную атмосферу для всех гостей, мы решили провести наш
+              вечер в формате только для взрослых.
+            </p>
+          </Reveal>
 
-          <div className="mt-6 flex items-center justify-center gap-3">
-            {["#6b2535", "#4a5d3a", "#c9b48a"].map((c, i) => (
-              <span
-                key={c}
-                className="h-9 w-9 rounded-full border border-border/60 shadow-inner animate-pop"
-                style={{ backgroundColor: c, animationDelay: `${i * 120}ms` }}
-              />
-            ))}
+          <div className="mt-12 space-y-14">
+            <Reveal variant="paper" delay={100} className="text-center">
+              <p className="font-script text-3xl sm:text-2xl text-forest">трансфер</p>
+              <p className="mx-auto mt-3 max-w-sm font-serif-display text-[1.18rem] sm:text-[1.05rem] leading-relaxed text-ink/85">
+                Наша площадка находится недалеко от города, куда легко добраться на такси, автобусе или личном авто. Мы
+                решили не привязывать вас к общему расписанию, чтобы вы могли приехать в удобное для вас время.
+              </p>
+            </Reveal>
+
+            <Reveal variant="paper" delay={200} className="text-center">
+              <p className="font-script text-3xl sm:text-2xl text-forest">дресс-код</p>
+              <p className="mx-auto mt-3 max-w-sm font-serif-display text-[1.18rem] sm:text-[1.05rem] leading-relaxed text-ink/85">
+                Мы за ваш комфорт, поэтому можете выбрать любой наряд! Но если ваша душа просит эстетики, присмотритесь
+                к этим цветам — они идеально впишутся в наш праздник.
+              </p>
+              <p className="mt-4 font-hand text-2xl sm:text-xl text-forest">
+                шоколадный · олива · бежевый · серый · кремовый
+              </p>
+              <div className="mt-4 flex items-center justify-center gap-3">
+                {["#4a2c1a", "#4a5d3a", "#c9b48a", "#9a9a92", "#fff4e1"].map((c, i) => (
+                  <span
+                    key={c}
+                    className="h-9 w-9 rounded-full border border-border/60 shadow-inner animate-pop"
+                    style={{ backgroundColor: c, animationDelay: `${i * 120}ms` }}
+                  />
+                ))}
+              </div>
+            </Reveal>
+
+            <Reveal variant="paper" delay={300} className="text-center">
+              <p className="font-script text-3xl sm:text-2xl text-forest">ведущий</p>
+              <p className="mx-auto mt-3 max-w-sm font-serif-display text-[1.18rem] sm:text-[1.05rem] leading-relaxed text-ink/85">
+                По всем вопросам по программе, тостам и сюрпризам — пишите нашему ведущему:
+              </p>
+              <p className="mt-4 font-hand text-2xl sm:text-xl text-burgundy">Алексей</p>
+              <div className="mt-2 flex flex-col items-center gap-1 font-serif-display text-[1.05rem] text-ink/85">
+                <a href="tel:+79297180371" className="ink-link">
+                  +7 (929) 718-03-71
+                </a>
+                <a href="https://t.me/Lisnenko_ved" target="_blank" rel="noreferrer" className="ink-link">
+                  @Lisnenko_ved в Telegram
+                </a>
+              </div>
+            </Reveal>
           </div>
-        </Reveal>
+        </section>
 
         {/* RSVP */}
         <Reveal as="section" className="relative mt-20" variant="paper">
           <PolaroidNote rotate="-1.2deg">
-            <div className="text-center">
-              <h2 className="font-script text-3xl text-burgundy">подтвердите участие</h2>
-              <p className="mt-2 font-serif-display text-ink/80">
-                ответьте, пожалуйста, до <span className="font-hand text-burgundy">1 августа</span>
-              </p>
-            </div>
-            <div className="mt-6">
-              <RsvpForm />
-            </div>
+            <RsvpForm
+              header={
+                <div className="text-center">
+                  <h2 className="font-script text-4xl sm:text-3xl text-burgundy">подтвердите участие</h2>
+                  <p className="mt-2 font-serif-display text-lg sm:text-base text-ink/80">
+                    ответьте, пожалуйста, до <span className="font-hand text-burgundy">1 июня</span>
+                  </p>
+                </div>
+              }
+            />
           </PolaroidNote>
+        </Reveal>
+
+        {/* Countdown */}
+        <Reveal as="section" className="relative mt-20" variant="paper">
+          <Countdown />
         </Reveal>
 
         {/* Footer */}
         <Reveal as="footer" className="relative mt-20 text-center" variant="fade">
-          <img
-            src={heart}
-            alt=""
-            width={512}
-            height={512}
-            loading="lazy"
-            className="mx-auto w-14 opacity-70 -rotate-12 animate-float"
-          />
-          <p className="mt-2 font-script text-2xl text-burgundy">до встречи</p>
-          <p className="font-hand text-xl text-forest">А. & М.</p>
-          <p className="mt-6 font-marker text-xs uppercase tracking-[0.3em] text-ink/50">
-            14 · 09 · 2026
-          </p>
+          <p className="mt-2 font-script text-3xl sm:text-2xl text-burgundy">до встречи</p>
+          <p className="font-hand text-2xl sm:text-xl text-forest">В. & Е.</p>
+          <p className="mt-6 font-marker text-xs uppercase tracking-[0.3em] text-ink/50">05 · 07 · 2026</p>
         </Reveal>
       </div>
       <Toaster position="top-center" />

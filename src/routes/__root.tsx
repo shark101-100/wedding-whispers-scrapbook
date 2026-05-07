@@ -28,24 +28,31 @@ export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
+      { name: "theme-color", content: "#fefdf7" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
       { title: "Приглашение на свадьбу" },
-      { name: "description", content: "Приглашение на свадьбу Виктории и Егора" },
+      { name: "description", content: "5 июля" },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "Приглашение на свадьбу" },
-      { property: "og:description", content: "Приглашение на свадьбу Виктории и Егора" },
+      { property: "og:description", content: "5 июля" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Приглашение на свадьбу" },
-      { name: "twitter:description", content: "Приглашение на свадьбу Виктории и Егора" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d05a2216-42af-4c60-945c-f90b6a4fc839/id-preview-f765dce7--b3a3543a-bc13-4ed8-aa13-f8d23be5b92e.lovable.app-1777748552762.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d05a2216-42af-4c60-945c-f90b6a4fc839/id-preview-f765dce7--b3a3543a-bc13-4ed8-aa13-f8d23be5b92e.lovable.app-1777748552762.png" },
+      { name: "twitter:description", content: "5 июля" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/IkXcGasV69SuKm5YXdR7vXbmbxj1/social-images/social-1778177907228-photo_2026-05-07_22-17-39.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/IkXcGasV69SuKm5YXdR7vXbmbxj1/social-images/social-1778177907228-photo_2026-05-07_22-17-39.webp" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Marck+Script&family=Shantell+Sans:wght@400;500;600;700&display=swap",
       },
     ],
   }),
@@ -56,11 +63,11 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-background" style={{ backgroundColor: "#fefdf7" }}>
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="bg-background" style={{ backgroundColor: "#fefdf7" }}>
         {children}
         <Scripts />
       </body>
