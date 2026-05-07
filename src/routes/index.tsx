@@ -330,7 +330,7 @@ function Invitation() {
               <p className="mt-4 font-hand text-2xl sm:text-xl text-burgundy">Алексей</p>
               <div className="mt-2 flex flex-col items-center gap-1 font-serif-display text-[1.05rem] text-ink/85">
                 <a href="tel:+79297180371" className="ink-link">
-                  +7 (999) 123-45-67
+                  +7 (929) 718-03-71
                 </a>
                 <a href="https://t.me/Lisnenko_ved" target="_blank" rel="noreferrer" className="ink-link">
                   @Lisnenko_ved в Telegram
