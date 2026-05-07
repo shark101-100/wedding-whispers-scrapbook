@@ -311,7 +311,7 @@ function Invitation() {
                 шоколадный · олива · бежевый · серый · кремовый
               </p>
               <div className="mt-4 flex items-center justify-center gap-3">
-                {["#4a2c1a", "#4a5d3a", "#c9b48a", "#9a9a92", "#ecdcc0"].map((c, i) => (
+                {["#4a2c1a", "#4a5d3a", "#c9b48a", "#9a9a92", "#f5efe4"].map((c, i) => (
                   <span
                     key={c}
                     className="h-9 w-9 rounded-full border border-border/60 shadow-inner animate-pop"
