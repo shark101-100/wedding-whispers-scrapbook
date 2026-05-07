@@ -206,6 +206,7 @@ export function RsvpForm({ header }: { header?: React.ReactNode } = {}) {
 
   return (
     <form onSubmit={onSubmit} className="space-y-5 text-left">
+      {header && <div className="mb-2">{header}</div>}
       <div>
         <label className="font-hand text-xl sm:text-lg text-forest block mb-1">
           ваше имя
