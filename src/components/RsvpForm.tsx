@@ -76,8 +76,8 @@ export function RsvpForm({ header }: { header?: React.ReactNode } = {}) {
     const firstName = name.trim().split(/\s+/)[0] || "друг";
 
     return (
-      <div ref={doneRef} className="relative py-2 text-center">
-        {/* main card content */}
+      <div ref={doneRef} className="relative py-2">
+        {/* main card content (no extra rotated card — sits inside parent polaroid) */}
         <div className="relative mx-auto w-full max-w-sm animate-paper-in">
 
 
