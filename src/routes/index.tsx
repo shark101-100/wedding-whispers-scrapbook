@@ -8,6 +8,7 @@ import heart from "@/assets/heart.png";
 import { RsvpForm } from "@/components/RsvpForm";
 import { Toaster } from "@/components/ui/sonner";
 import { Reveal } from "@/components/Reveal";
+import { Countdown } from "@/components/Countdown";
 
 export const Route = createFileRoute("/")({
   component: Invitation,
