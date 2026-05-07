@@ -138,16 +138,6 @@ function Invitation() {
               </div>
             </div>
           </div>
-          
-          
-          <img
-            src={heart}
-            alt=""
-            width={512}
-            height={512}
-            loading="lazy"
-            className="absolute -bottom-10 -right-2 w-16 rotate-12 opacity-70 animate-float"
-          />
         </Reveal>
 
         {/* Story */}
