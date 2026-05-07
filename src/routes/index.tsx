@@ -339,16 +339,16 @@ function Invitation() {
           </PolaroidNote>
         </Reveal>
 
+        {/* Countdown */}
+        <Reveal as="section" className="relative mt-20" variant="paper">
+          <Countdown />
+        </Reveal>
+
         {/* Footer */}
         <Reveal as="footer" className="relative mt-20 text-center" variant="fade">
           <p className="mt-2 font-script text-3xl sm:text-2xl text-burgundy">до встречи</p>
           <p className="font-hand text-2xl sm:text-xl text-forest">В. & Е.</p>
           <p className="mt-6 font-marker text-xs uppercase tracking-[0.3em] text-ink/50">05 · 07 · 2026</p>
-        </Reveal>
-
-        {/* Countdown */}
-        <Reveal as="section" className="relative mt-20" variant="paper">
-          <Countdown />
         </Reveal>
       </div>
       <Toaster position="top-center" />
