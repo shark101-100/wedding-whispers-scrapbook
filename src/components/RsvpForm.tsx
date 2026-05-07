@@ -77,23 +77,7 @@ export function RsvpForm() {
 
     return (
       <div ref={doneRef} className="relative -mx-2 sm:-mx-4 py-4">
-        {/* floating sketch decorations */}
-        <img
-          src={florals}
-          alt=""
-          width={768}
-          height={1024}
-          aria-hidden
-          className="pointer-events-none absolute -top-6 -left-4 w-24 opacity-60 -rotate-[14deg] animate-float-slow"
-        />
-        <img
-          src={rose}
-          alt=""
-          width={512}
-          height={640}
-          aria-hidden
-          className="pointer-events-none absolute -bottom-4 -right-3 w-20 opacity-60 rotate-[10deg] animate-float"
-        />
+
 
         {/* main card — like a postage envelope */}
         <div
@@ -102,26 +86,7 @@ export function RsvpForm() {
         >
           <span className="tape -top-3 left-1/2 -translate-x-1/2" />
 
-          {/* "stamp" corner */}
-          <div
-            className="absolute -top-4 -right-3 h-16 w-14 border-2 border-dashed border-burgundy/70 bg-background flex flex-col items-center justify-center text-center rotate-[8deg] shadow-sm"
-            style={{ animationDelay: "350ms" }}
-          >
-            <span className="font-marker text-[0.55rem] uppercase tracking-widest text-burgundy/80 leading-none">
-              почта
-            </span>
-            <img
-              src={heart}
-              alt=""
-              width={512}
-              height={512}
-              aria-hidden
-              className="w-7 mt-1 opacity-80"
-            />
-            <span className="font-marker text-[0.55rem] tracking-widest text-burgundy/80 leading-none mt-1">
-              В·Е
-            </span>
-          </div>
+
 
           {/* rings illustration */}
           <img
@@ -158,8 +123,8 @@ export function RsvpForm() {
             style={{ animationDelay: "420ms" }}
           >
             {isYes
-              ? "будем считать дни до встречи — приготовьте удобную обувь и хорошее настроение"
-              : "очень жаль, что не сможете быть рядом — обнимаем крепко и сохраним для вас кусочек торта в сердце"}
+              ? "будем считать дни до встречи — приготовьте хорошее настроение"
+              : "очень жаль, что не сможете быть рядом"}
           </p>
 
           {/* mini "ticket" stub for guests going */}
@@ -222,8 +187,8 @@ export function RsvpForm() {
           style={{ transform: "rotate(2.4deg)", animationDelay: "850ms" }}
         >
           <span className="tape -top-2 left-1/2 -translate-x-1/2" style={{ width: 50, height: 16 }} />
-          <p className="font-hand text-base text-ink/80 leading-snug">
-            если планы изменятся —<br />
+          <p className="font-hand text-base text-ink/80 leading-snug font-bold">
+            если планы изменятся сообщите до 1 июля —<br />
             <button
               type="button"
               onClick={() => {
