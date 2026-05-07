@@ -382,4 +382,5 @@
     stroke-dashoffset: calc(340 * (1 - var(--heart-progress, 0)));
     transition: stroke-dashoffset 80ms linear;
   }
+}
 
