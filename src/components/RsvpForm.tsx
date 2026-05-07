@@ -60,6 +60,19 @@ export function RsvpForm({ header }: { header?: React.ReactNode } = {}) {
 
     setDone(true);
     toast.success("Спасибо! Ответ записан ♡");
+
+    try {
+      await sendNotification({
+        data: {
+          guest_name: parsed.data.guest_name,
+          attending: parsed.data.attending,
+          guests_count: parsed.data.guests_count,
+          message: parsed.data.message ?? null,
+        },
+      });
+    } catch (err) {
+      console.error("Failed to notify Telegram:", err);
+    }
   }
 
   const doneRef = useRef<HTMLDivElement | null>(null);
