@@ -39,7 +39,16 @@ export const notifyRsvp = createServerFn({ method: "POST" })
     }
 
     try {
-      const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      const proxyUrl = process.env.TELEGRAM_PROXY_URL;
+      let fetchImpl: typeof fetch = fetch;
+      let dispatcher: unknown = undefined;
+      if (proxyUrl) {
+        const undici = await import("undici");
+        dispatcher = new undici.ProxyAgent(proxyUrl);
+        fetchImpl = undici.fetch as unknown as typeof fetch;
+      }
+
+      const res = await fetchImpl(`https://api.telegram.org/bot${token}/sendMessage`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -48,7 +57,8 @@ export const notifyRsvp = createServerFn({ method: "POST" })
           parse_mode: "HTML",
           disable_web_page_preview: true,
         }),
-      });
+        ...(dispatcher ? { dispatcher } : {}),
+      } as RequestInit);
       if (!res.ok) {
         const body = await res.text();
         console.error(`Telegram sendMessage failed [${res.status}]: ${body}`);
