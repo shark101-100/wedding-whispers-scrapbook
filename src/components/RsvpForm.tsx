@@ -23,6 +23,7 @@ export function RsvpForm({ header }: { header?: React.ReactNode } = {}) {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
+  const sendNotification = useServerFn(notifyRsvp);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
