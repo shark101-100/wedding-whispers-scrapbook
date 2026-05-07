@@ -18,7 +18,7 @@ const schema = z.object({
   message: z.string().trim().max(500, "Не больше 500 символов").optional(),
 });
 
-export function RsvpForm() {
+export function RsvpForm({ header }: { header?: React.ReactNode } = {}) {
   const [attending, setAttending] = useState<boolean | null>(null);
   const [name, setName] = useState("");
   const [count, setCount] = useState(1);
