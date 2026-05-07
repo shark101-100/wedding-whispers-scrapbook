@@ -68,6 +68,19 @@ function RootShell({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body className="bg-background" style={{ backgroundColor: "#fefdf7" }}>
+        <div
+          aria-hidden="true"
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            height: "env(safe-area-inset-top)",
+            backgroundColor: "#fefdf7",
+            zIndex: 9999,
+            pointerEvents: "none",
+          }}
+        />
         {children}
         <Scripts />
       </body>
