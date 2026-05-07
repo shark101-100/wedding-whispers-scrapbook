@@ -327,12 +327,14 @@ function Invitation() {
               <p className="mx-auto mt-3 max-w-sm font-serif-display text-[1.18rem] sm:text-[1.05rem] leading-relaxed text-ink/85">
                 По всем вопросам по программе, тостам и сюрпризам — пишите нашему ведущему:
               </p>
-              <p className="mt-4 font-hand text-2xl sm:text-xl text-burgundy">
-                Алексей
-              </p>
+              <p className="mt-4 font-hand text-2xl sm:text-xl text-burgundy">Алексей</p>
               <div className="mt-2 flex flex-col items-center gap-1 font-serif-display text-[1.05rem] text-ink/85">
-                <a href="tel:+79991234567" className="ink-link">+7 (999) 123-45-67</a>
-                <a href="https://t.me/alexey" target="_blank" rel="noreferrer" className="ink-link">@alexey в Telegram</a>
+                <a href="tel:+79297180371" className="ink-link">
+                  +7 (999) 123-45-67
+                </a>
+                <a href="https://t.me/Lisnenko_ved" target="_blank" rel="noreferrer" className="ink-link">
+                  @Lisnenko_ved в Telegram
+                </a>
               </div>
             </Reveal>
           </div>
