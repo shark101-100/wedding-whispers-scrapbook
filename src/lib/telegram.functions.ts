@@ -52,13 +52,16 @@ export const notifyRsvp = createServerFn({ method: "POST" })
         if (/^socks/i.test(proxyUrl)) {
           const { socksDispatcher } = await import("fetch-socks");
           const u = new URL(proxyUrl);
-          dispatcher = socksDispatcher({
-            type: 5,
-            host: u.hostname,
-            port: Number(u.port) || 1080,
-            userId: decodeURIComponent(u.username) || undefined,
-            password: decodeURIComponent(u.password) || undefined,
-          });
+          dispatcher = socksDispatcher(
+            {
+              type: 5,
+              host: u.hostname,
+              port: Number(u.port) || 1080,
+              userId: decodeURIComponent(u.username) || undefined,
+              password: decodeURIComponent(u.password) || undefined,
+            },
+            { allowH2: false, connect: { allowH2: false } } as never,
+          );
         } else {
           dispatcher = new undici.ProxyAgent(proxyUrl);
         }
