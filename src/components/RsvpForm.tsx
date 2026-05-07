@@ -169,7 +169,7 @@ export function RsvpForm({ header }: { header?: React.ReactNode } = {}) {
         >
           <span className="tape -top-2 left-1/2 -translate-x-1/2" style={{ width: 50, height: 16 }} />
           <p className="font-hand text-base text-ink/80 leading-snug font-bold">
-            если планы изменятся сообщите до 1 июня —<br />
+            если планы изменятся, сообщите до 30 июня —<br />
             <button
               type="button"
               onClick={() => {
