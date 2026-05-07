@@ -44,8 +44,26 @@ export const notifyRsvp = createServerFn({ method: "POST" })
       let dispatcher: unknown = undefined;
       if (proxyUrl) {
         const undici = await import("undici");
-        dispatcher = new undici.ProxyAgent(proxyUrl);
         fetchImpl = undici.fetch as unknown as typeof fetch;
+        if (/^socks/i.test(proxyUrl)) {
+          const { SocksProxyAgent } = await import("socks-proxy-agent");
+          // socks-proxy-agent совместим с undici как Dispatcher через wrapper:
+          // используем undici.Agent с connect через socks
+          const { socksDispatcher } = await import("fetch-socks");
+          // Парсим URL: socks5://user:pass@host:port
+          const u = new URL(proxyUrl);
+          dispatcher = socksDispatcher({
+            type: 5,
+            host: u.hostname,
+            port: Number(u.port) || 1080,
+            userId: decodeURIComponent(u.username) || undefined,
+            password: decodeURIComponent(u.password) || undefined,
+          });
+          // SocksProxyAgent импортирован для совместимости, но не используется
+          void SocksProxyAgent;
+        } else {
+          dispatcher = new undici.ProxyAgent(proxyUrl);
+        }
       }
 
       const res = await fetchImpl(`https://api.telegram.org/bot${token}/sendMessage`, {
