@@ -1,48 +1,19 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function HeartDraw({ className = "" }: { className?: string }) {
   const svgRef = useRef<SVGSVGElement | null>(null);
+  const [started, setStarted] = useState(false);
 
   useEffect(() => {
-    const el = svgRef.current;
-    if (!el) return;
-
-    let raf = 0;
-    let hasScrolled = false;
     const initialY = window.scrollY;
-
-    const compute = () => {
-      raf = 0;
-      if (!hasScrolled) {
-        el.style.setProperty("--heart-progress", "0");
-        return;
-      }
-      const rect = el.getBoundingClientRect();
-      const vh = window.innerHeight || document.documentElement.clientHeight;
-      const start = vh;
-      const end = vh * 0.4;
-      const pos = rect.top;
-      let p = (start - pos) / (start - end);
-      p = Math.max(0, Math.min(1, p));
-      el.style.setProperty("--heart-progress", String(p));
-    };
-
     const onScroll = () => {
-      if (!hasScrolled && Math.abs(window.scrollY - initialY) > 2) {
-        hasScrolled = true;
+      if (Math.abs(window.scrollY - initialY) > 2) {
+        setStarted(true);
+        window.removeEventListener("scroll", onScroll);
       }
-      if (raf) return;
-      raf = requestAnimationFrame(compute);
     };
-
-    el.style.setProperty("--heart-progress", "0");
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-      if (raf) cancelAnimationFrame(raf);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
@@ -58,7 +29,8 @@ export function HeartDraw({ className = "" }: { className?: string }) {
       strokeLinejoin="round"
     >
       <path
-        className="animate-draw-heart"
+        className={started ? "animate-draw-heart" : undefined}
+        style={started ? undefined : { strokeDasharray: 340, strokeDashoffset: 340 }}
         d="M50 80 C 30 68, 9 54, 13 33 C 16 18, 33 11, 44 22 C 47 25, 49 29, 50 33 C 51 29, 53 25, 56 22 C 67 11, 84 18, 87 33 C 91 54, 70 68, 50 80 Z"
       />
     </svg>
