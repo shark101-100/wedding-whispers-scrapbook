@@ -28,7 +28,7 @@ export function Countdown() {
 
   return (
     <div className="text-center">
-      <p className="font-hand text-2xl sm:text-xl text-forest">до встречи осталось</p>
+      <p className="font-hand text-2xl sm:text-xl text-forest">ждём вас через...</p>
       <div className="mt-4 grid grid-cols-4 gap-2 sm:gap-3">
         {items.map(([value, label]) => (
           <div key={label} className="flex flex-col items-center">
