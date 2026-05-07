@@ -59,7 +59,7 @@ export function RsvpForm({ header }: { header?: React.ReactNode } = {}) {
     }
 
     setDone(true);
-    toast.success("Спасибо! Ответ записан ♡");
+    
 
     try {
       await sendNotification({
