@@ -9,6 +9,7 @@ import { RsvpForm } from "@/components/RsvpForm";
 import { Toaster } from "@/components/ui/sonner";
 import { Reveal } from "@/components/Reveal";
 import { Countdown } from "@/components/Countdown";
+import { HeartDraw } from "@/components/HeartDraw";
 
 export const Route = createFileRoute("/")({
   component: Invitation,
