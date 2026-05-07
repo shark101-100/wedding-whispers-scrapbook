@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { z } from "zod";
+import { useServerFn } from "@tanstack/react-start";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { notifyRsvp } from "@/lib/telegram.functions";
 import rings from "@/assets/rings.png";
 import heart from "@/assets/heart.png";
 import florals from "@/assets/florals.png";
@@ -21,6 +23,7 @@ export function RsvpForm({ header }: { header?: React.ReactNode } = {}) {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
+  const sendNotification = useServerFn(notifyRsvp);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -57,6 +60,19 @@ export function RsvpForm({ header }: { header?: React.ReactNode } = {}) {
 
     setDone(true);
     toast.success("Спасибо! Ответ записан ♡");
+
+    try {
+      await sendNotification({
+        data: {
+          guest_name: parsed.data.guest_name,
+          attending: parsed.data.attending,
+          guests_count: parsed.data.guests_count,
+          message: parsed.data.message ?? null,
+        },
+      });
+    } catch (err) {
+      console.error("Failed to notify Telegram:", err);
+    }
   }
 
   const doneRef = useRef<HTMLDivElement | null>(null);
