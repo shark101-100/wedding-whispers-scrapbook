@@ -6,67 +6,33 @@ export function HeartDraw({ className = "" }: { className?: string }) {
   useEffect(() => {
     const el = svgRef.current;
     if (!el) return;
+    // If browser supports scroll-driven animations natively, CSS handles it.
+    if (CSS.supports("animation-timeline: view()")) return;
 
     let raf = 0;
-    let hasScrolled = false;
-    let lastProgress = 0;
-
-    const compute = () => {
+    const update = () => {
+      raf = 0;
       const rect = el.getBoundingClientRect();
       const vh = window.innerHeight || document.documentElement.clientHeight;
-      // Адаптивный диапазон: на мобильных шире (плавнее), на десктопе короче
-      const isMobile = vh < 800;
-      // start: когда верх элемента на этой доле viewport (1 = у нижнего края)
-      const startFrac = isMobile ? 0.95 : 0.85;
-      // end: когда верх элемента поднимется до этой доли (центрировано/выше)
-      const endFrac = isMobile ? 0.25 : 0.35;
-
-      const startY = vh * startFrac;
-      const endY = vh * endFrac;
-      const top = rect.top;
-
-      let p = (startY - top) / (startY - endY);
+      // 0 when element bottom enters viewport top, 1 when element top reaches 40% of viewport
+      const start = vh; // distance from viewport top when starting
+      const end = vh * 0.4;
+      const pos = rect.top;
+      let p = (start - pos) / (start - end);
       p = Math.max(0, Math.min(1, p));
-      // лёгкий ease-in-out для более плавных границ
-      p = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
-      return p;
-    };
-
-    const apply = (p: number) => {
-      lastProgress = p;
       el.style.setProperty("--heart-progress", String(p));
     };
-
     const onScroll = () => {
-      if (!hasScrolled) {
-        hasScrolled = true;
-      }
       if (raf) return;
-      raf = requestAnimationFrame(() => {
-        raf = 0;
-        apply(compute());
-      });
+      raf = requestAnimationFrame(update);
     };
-
-    const onResize = () => {
-      if (!hasScrolled) return;
-      if (raf) return;
-      raf = requestAnimationFrame(() => {
-        raf = 0;
-        apply(compute());
-      });
-    };
-
-    // Старт: всегда 0 — анимация только после скролла, даже если сердце уже видно
-    apply(0);
-
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onResize);
+    window.addEventListener("resize", onScroll);
     return () => {
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onResize);
+      window.removeEventListener("resize", onScroll);
       if (raf) cancelAnimationFrame(raf);
-      void lastProgress;
     };
   }, []);
 

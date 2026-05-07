@@ -379,8 +379,22 @@
   }
   .animate-draw-heart {
     stroke-dasharray: 340;
-    stroke-dashoffset: calc(340 * (1 - var(--heart-progress, 0)));
-    transition: stroke-dashoffset 120ms linear;
+    stroke-dashoffset: 340;
+  }
+  /* Scroll-linked: progress driven by view() timeline (Chromium 115+, Safari TP) */
+  @supports (animation-timeline: view()) {
+    .animate-draw-heart {
+      animation: draw-heart linear both;
+      animation-timeline: view();
+      animation-range: cover 10% cover 60%;
+    }
+  }
+  /* Fallback: when scroll timeline unsupported, draw via JS-set --heart-progress */
+  @supports not (animation-timeline: view()) {
+    .animate-draw-heart {
+      stroke-dashoffset: calc(340 * (1 - var(--heart-progress, 0)));
+      transition: stroke-dashoffset 80ms linear;
+    }
   }
 }
 
