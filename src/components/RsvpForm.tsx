@@ -14,7 +14,7 @@ const schema = z.object({
     .min(2, "Укажите имя")
     .max(100, "Слишком длинное имя"),
   attending: z.boolean(),
-  guests_count: z.number().int().min(0).max(10),
+  guests_count: z.number().int().min(0).max(3),
   message: z.string().trim().max(500, "Не больше 500 символов").optional(),
 });
 
@@ -306,7 +306,7 @@ export function RsvpForm() {
             </span>
             <button
               type="button"
-              onClick={() => setCount((c) => Math.min(10, c + 1))}
+              onClick={() => setCount((c) => Math.min(3, c + 1))}
               className="h-10 w-10 rounded-full border-2 border-burgundy font-hand text-2xl text-burgundy leading-none transition-transform active:scale-90 hover:rotate-3"
               aria-label="больше"
             >
