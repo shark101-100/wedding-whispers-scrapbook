@@ -85,10 +85,9 @@ function Invitation() {
             style={{ animationDelay: "450ms" }}
           >
             <p>
-              Дорогие родные и друзья! <br /> 
-              Один день в этом году станет для нас особенно важным, и мы хотим провести его в
-              кругу близких! <br /> 
-              С большим удовольствием приглашаем вас на нашу свадьбу, которая состоится:
+              Дорогие родные и друзья! <br />
+              Один день в этом году станет для нас особенно важным, и мы хотим провести его в кругу близких! <br />С
+              большим удовольствием приглашаем вас на нашу свадьбу, которая состоится:
             </p>
           </div>
         </header>
@@ -102,14 +101,18 @@ function Invitation() {
           <div className="mt-2 h-0.5 w-full bg-ink/60" />
           <div className="grid grid-cols-3 text-center divide-x-2 divide-ink/60">
             <div className="flex flex-col px-1 pt-4 sm:px-2">
-              <p className="font-marker text-[0.6rem] sm:text-xs uppercase tracking-wider text-ink/70 break-words">суббота</p>
+              <p className="font-marker text-[0.6rem] sm:text-xs uppercase tracking-wider text-ink/70 break-words">
+                суббота
+              </p>
               <div className="my-3 h-0.5 w-full bg-ink/50" />
               <div className="relative flex h-32 sm:h-36 items-center justify-center">
                 <p className="font-script text-7xl sm:text-7xl text-ink/80">4</p>
               </div>
             </div>
             <div className="flex flex-col px-1 pt-4 sm:px-2">
-              <p className="font-marker text-[0.6rem] sm:text-xs uppercase tracking-wider text-burgundy break-words">воскресенье</p>
+              <p className="font-marker text-[0.6rem] sm:text-xs uppercase tracking-wider text-burgundy break-words">
+                воскресенье
+              </p>
               <div className="my-3 h-0.5 w-full bg-ink/50" />
               <div className="relative flex h-32 sm:h-36 items-center justify-center">
                 <svg
@@ -131,7 +134,9 @@ function Invitation() {
               </div>
             </div>
             <div className="flex flex-col px-1 pt-4 sm:px-2">
-              <p className="font-marker text-[0.6rem] sm:text-xs uppercase tracking-wider text-ink/70 break-words">понедельник</p>
+              <p className="font-marker text-[0.6rem] sm:text-xs uppercase tracking-wider text-ink/70 break-words">
+                понедельник
+              </p>
               <div className="my-3 h-0.5 w-full bg-ink/50" />
               <div className="relative flex h-32 sm:h-36 items-center justify-center">
                 <p className="font-script text-7xl sm:text-7xl text-ink/80">6</p>
@@ -264,7 +269,7 @@ function Invitation() {
             <p className="mt-2 text-center font-serif-display text-lg sm:text-base text-ink/80">
               Самара, пос. Волжский,
               <br />
-              Жилгородок, 45В.
+              Жилгородок, 45В
             </p>
             <a
               href="https://yandex.com/maps/-/CPS34Y8I"
@@ -302,7 +307,9 @@ function Invitation() {
                 Мы за ваш комфорт, поэтому можете выбрать любой наряд! Но если ваша душа просит эстетики, присмотритесь
                 к этим цветам — они идеально впишутся в наш праздник.
               </p>
-              <p className="mt-4 font-hand text-2xl sm:text-xl text-forest">шоколадный · олива · бежевый · серый · кремовый</p>
+              <p className="mt-4 font-hand text-2xl sm:text-xl text-forest">
+                шоколадный · олива · бежевый · серый · кремовый
+              </p>
               <div className="mt-4 flex items-center justify-center gap-3">
                 {["#4a2c1a", "#4a5d3a", "#c9b48a", "#9a9a92", "#f5efe4"].map((c, i) => (
                   <span
