@@ -44,6 +44,12 @@ export const Route = createRootRoute({
       { name: "twitter:title", content: "Приглашение на свадьбу" },
       { name: "twitter:description", content: "5 июля" },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/IkXcGasV69SuKm5YXdR7vXbmbxj1/social-images/social-1778177907228-photo_2026-05-07_22-17-39.webp" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Приглашение на свадьбу" },
+      { property: "og:url", content: "https://wedding-tst.lovable.app/" },
+      { property: "og:site_name", content: "Приглашение на свадьбу" },
+      { property: "og:locale", content: "ru_RU" },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/IkXcGasV69SuKm5YXdR7vXbmbxj1/social-images/social-1778177907228-photo_2026-05-07_22-17-39.webp" },
     ],
     links: [
