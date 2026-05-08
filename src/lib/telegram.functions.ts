@@ -74,7 +74,7 @@ export const notifyRsvp = createServerFn({ method: "POST" })
           chat_id: chatId,
           text: lines.join("\n"),
           parse_mode: "HTML",
-          disable_web_page_preview: true,
+          disable_web_page_preview: false,
         }),
         ...(dispatcher ? { dispatcher } : {}),
       } as RequestInit);
